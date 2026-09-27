@@ -1,0 +1,8 @@
+{
+  "name": "qa-rm-testing-gates",
+  "version": "1.0.0",
+  "description": "Playground for testing SonarQube gates, SARIF import, and mutation testing",
+  "scripts": {
+    "test": "echo \"no tests yet\" && exit 0"
+  }
+}

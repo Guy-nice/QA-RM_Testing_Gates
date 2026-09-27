@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "Playground for testing SonarQube gates, SARIF import, and mutation testing",
   "scripts": {
-    "test": "node --import tsx --test src/**/*.test.ts",
-    "coverage": "c8 --reporter=lcov --reporter=text node --import tsx --test src/**/*.test.ts"
+    "test": "node --import tsx --test",
+    "coverage": "c8 --reporter=lcov --reporter=text node --import tsx --test"
   },
   "devDependencies": {
     "tsx": "^4.19.0",

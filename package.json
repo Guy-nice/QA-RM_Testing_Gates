@@ -7,7 +7,8 @@
     "coverage": "c8 --reporter=lcov --reporter=text node --import tsx --test"
   },
   "devDependencies": {
-    "tsx": "^4.19.0",
-    "c8": "^10.1.2"
+    "@stryker-mutator/core": "^10.0.0",
+    "c8": "^10.1.2",
+    "tsx": "^4.19.0"
   }
 }

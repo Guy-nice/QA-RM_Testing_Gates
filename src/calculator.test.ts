@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { add, subtract, isPositive, divide, multiply, isEven } from "./calculator.ts";
+import { add, subtract, isPositive, divide, multiply, isEven, isOdd } from "./calculator.ts";
 
 test("add adds two numbers", () => {
   assert.equal(add(2, 3), 5);
@@ -37,4 +37,8 @@ test("multiply returns zero when multiplying by zero", () => {
 test("isEven returns true for even numbers", () => {
   assert.equal(isEven(4), true);
   assert.equal(isEven(0), true);
+});
+
+test("isOdd returns true for odd numbers", () => {
+  assert.equal(isOdd(3), true);
 });

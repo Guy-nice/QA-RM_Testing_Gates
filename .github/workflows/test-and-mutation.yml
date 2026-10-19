@@ -29,8 +29,19 @@ jobs:
       - name: Run mutation testing (Stryker)
         run: npx stryker run
 
+      - name: Download SonarQube Scanner
+        run: |
+          mkdir -p ~/.sonar
+          cd ~/.sonar
+          curl -sSLo sonar-scanner.zip https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-6.1.0.4477-linux-x64.zip
+          unzip -q sonar-scanner.zip
+          rm sonar-scanner.zip
+
       - name: SonarQube Scan
-        uses: SonarSource/sonarqube-scan-action@master
+        run: |
+          ~/.sonar/sonar-scanner-6.1.0.4477-linux-x64/bin/sonar-scanner \
+            -Dsonar.projectBaseDir=. \
+            -Dsonar.host.url=https://sonartest.nice.com \
+            -Dsonar.token=${{ secrets.SONAR_TOKEN }}
         env:
-          SONAR_HOST_URL: https://sonartest.nice.com
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}

@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 1,
+  "run": {
+    "runId": "run-1792426537",
+    "threshold": 80,
+    "round": 1,
+    "verdict": "FAIL",
+    "tools": [
+      "stryker"
+    ],
+    "agentVersion": "2.0.0-rc7",
+    "commit": "ce01f5badc12c757ae20e28157ad2d402c122a5b",
+    "scoreBefore": 50.0,
+    "durationSec": 9
+  },
+  "summary": {
+    "overall": {
+      "total": 4,
+      "killed": 2,
+      "timedOut": 0,
+      "memoryError": 0,
+      "survived": 2,
+      "noCoverage": 0,
+      "unknown": 0,
+      "suppressed": 0,
+      "testsExecuted": 4,
+      "testKills": 2
+    },
+    "new": {
+      "total": 4,
+      "killed": 2,
+      "timedOut": 0,
+      "memoryError": 0,
+      "survived": 2,
+      "noCoverage": 0,
+      "unknown": 0,
+      "suppressed": 0,
+      "testsExecuted": 4,
+      "testKills": 2
+    }
+  },
+  "languages": {
+    "typescript": {
+      "overall": {
+        "total": 4,
+        "killed": 2,
+        "timedOut": 0,
+        "memoryError": 0,
+        "survived": 2,
+        "noCoverage": 0,
+        "unknown": 0,
+        "suppressed": 0,
+        "testsExecuted": 4,
+        "testKills": 2
+      },
+      "new": {
+        "total": 4,
+        "killed": 2,
+        "timedOut": 0,
+        "memoryError": 0,
+        "survived": 2,
+        "noCoverage": 0,
+        "unknown": 0,
+        "suppressed": 0,
+        "testsExecuted": 4,
+        "testKills": 2
+      }
+    }
+  },
+  "files": {
+    "src/calculator.ts": {
+      "language": "typescript",
+      "changedLines": 4,
+      "lines": 18,
+      "overall": {
+        "total": 4,
+        "killed": 2,
+        "timedOut": 0,
+        "memoryError": 0,
+        "survived": 2,
+        "noCoverage": 0,
+        "unknown": 0,
+        "suppressed": 0,
+        "testsExecuted": 4,
+        "testKills": 2
+      },
+      "new": {
+        "total": 4,
+        "killed": 2,
+        "timedOut": 0,
+        "memoryError": 0,
+        "survived": 2,
+        "noCoverage": 0,
+        "unknown": 0,
+        "suppressed": 0,
+        "testsExecuted": 4,
+        "testKills": 2
+      }
+    }
+  },
+  "mutants": [
+    {
+      "file": "src/calculator.ts",
+      "line": 32,
+      "operator": "ArithmeticOperator",
+      "status": "SURVIVED"
+    },
+    {
+      "file": "src/calculator.ts",
+      "line": 32,
+      "operator": "ConditionalExpression",
+      "status": "SURVIVED"
+    }
+  ]
+}

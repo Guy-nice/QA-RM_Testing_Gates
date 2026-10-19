@@ -1,0 +1,64 @@
+
+============================================================
+  MUTATION RUNNER -- polyglot lightweight edition
+============================================================
+
+  Repo : QA-RM_Testing_Gates  (git@github.com:Guy-nice/QA-RM_Testing_Gates.git)
+  Path : /private/tmp/QA-RM_Testing_Gates
+[Step 2] Resolving target files...
+         scope: branch (merge-base with HEAD~1)
+         1 file(s) changed across 1 language(s):
+           [typescript] calculator.ts
+
+[Step 1] Detecting languages and engines for the files in scope...
+         typescript   -> stryker         engine: ok
+
+         1 target(s) will be mutated:
+           [typescript] src/calculator.ts
+
+[Step 3] Running arid filter...
+         [typescript] calculator.ts: 45.5% arid (15/33 lines), 0 equivalent-mutant line(s)
+
+[Step 4] Running stryker for typescript (1 file(s))...
+[MUT] test narrowing skipped: karma.projectType is None, not 'angular-cli' -- test narrowing not applicable
+[MUT] /private/tmp/QA-RM_Testing_Gates/node_modules/.bin/stryker run --reporters json,progress --mutate src/calculator.ts:31-32
+[32m19:15:44 (90483) INFO ProjectReader[39m Found 1 of 82 file(s) to be mutated.
+[32m19:15:44 (90483) INFO Instrumenter[39m Instrumented 1 source file(s) with 4 mutant(s)
+[32m19:15:44 (90483) INFO ConcurrencyTokenProvider[39m Creating 9 test runner process(es).
+[32m19:15:45 (90483) INFO BroadcastReporter[39m Detected that current console does not support the "progress" reporter, downgrading to "progress-append-only" reporter
+[32m19:15:45 (90483) INFO DryRunExecutor[39m Starting initial test run (command test runner with "perTest" coverage analysis). This may take a while.
+[32m19:15:47 (90483) INFO DryRunExecutor[39m Initial test run succeeded. Ran 1 tests in 1 second (net 1967 ms, overhead 0 ms).
+[91m19:15:47 (90483) ERROR MutationTestReportHelper[39m Final mutation score 50.00 under breaking threshold 80, setting exit code to 1 (failure).
+[32m19:15:47 (90483) INFO MutationTestReportHelper[39m (improve mutation score or set `thresholds.break = null` to prevent this error in the future)
+[32m19:15:47 (90483) INFO JsonReporter[39m Your report can be found at: file:///private/tmp/QA-RM_Testing_Gates/mutation-reports/mutation.json
+[32m19:15:47 (90483) INFO MutationTestExecutor[39m Done in 3 seconds.
+  (full output: /private/tmp/QA-RM_Testing_Gates/mutation-reports/run-1792426537/pit/stryker.log)
+
+         Mutation score : 50.0% (2/4)
+         Test strength  : 50.0%  (informational only)
+         SURVIVED 2 | NO_COVERAGE 0 | ERRORS 0 | suppressed (arid/equivalent) 0
+
+============================================================
+  GATE: FAIL   (mutation score 50.0% vs threshold 80%)
+============================================================
+  mutation score : 50.0%
+  test strength  : 50.0%  (not the gate)
+  survived       : 2
+  no coverage    : 0
+
+  Threshold NOT met -- 2 survivor(s) and 0 uncovered mutant(s) need new tests.
+  Remediation was not requested -- this run is complete.
+  No tests are written for it. Only a user can ask for a separate remediation run.
+
+[Step 7] Sonar report + upload...
+  report: /private/tmp/QA-RM_Testing_Gates/.sonar/mutation-report.json  (overall 4 mutants, new 4)
+  Sonar target : https://sonartest.nice.com  project=qa-rm-testing-gates  PR #4
+
+  SONAR UPLOAD FAILED [token-missing]
+  SONAR_TOKEN is not set. Create a Sonar user token and export it in your shell (never paste it into the chat), then run:
+      python sonar_upload.py --project-root /private/tmp/QA-RM_Testing_Gates
+  The mutation gate result is unaffected; the run is marked incomplete (exit 6).
+============================================================
+  gate.json  : /private/tmp/QA-RM_Testing_Gates/mutation-reports/run-1792426537/gate.json
+============================================================
+

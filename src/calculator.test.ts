@@ -41,4 +41,10 @@ test("isEven returns true for even numbers", () => {
 
 test("isOdd returns true for odd numbers", () => {
   assert.equal(isOdd(3), true);
+  assert.equal(isOdd(1), true);
+});
+
+test("isOdd returns false for even numbers", () => {
+  assert.equal(isOdd(4), false);
+  assert.equal(isOdd(0), false);
 });

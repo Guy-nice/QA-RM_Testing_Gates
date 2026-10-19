@@ -1,0 +1,125 @@
+<!doctype html><!-- MUTATION_REPORT_STANDARD_FORMAT_v1: run run-1792421362 -->
+<html><head><meta charset=utf8>
+<meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Mutation Run Report &mdash; run-1792421362</title>
+<meta name="description" content="Mutation testing run report: executive summary, remediation rounds, tests-added summary, mutator performance, timing, and token usage.">
+<style>
+:root{
+  --bg:#f5f6f8; --surface:#ffffff; --surface-2:#eef0f3; --text:#1b2430;
+  --muted:#606a78; --border:#dde1e7; --accent:#1f7a6c; --accent-soft:#e2f1ee;
+  --num:#8a4b00; --kill:#1f9d55; --kill-soft:#e5f6ea; --survive:#c23b34;
+  --survive-soft:#fbe9e8; --nocov:#b4790a; --nocov-soft:#fbf1de; --neutral:#8a93a3;
+  --shadow: 0 1px 2px rgba(20,26,34,.04), 0 6px 20px -8px rgba(20,26,34,.12);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#12161c; --surface:#1a2027; --surface-2:#212832; --text:#e7ebf1;
+    --muted:#93a0b3; --border:#2a323d; --accent:#4fcdb8; --accent-soft:#173029;
+    --num:#e0a35a; --kill:#4cd07c; --kill-soft:#173023; --survive:#f0847d;
+    --survive-soft:#33201f; --nocov:#e0ab4c; --nocov-soft:#2f2717; --neutral:#7d879a;
+    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 6px 24px -8px rgba(0,0,0,.5);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#12161c; --surface:#1a2027; --surface-2:#212832; --text:#e7ebf1;
+  --muted:#93a0b3; --border:#2a323d; --accent:#4fcdb8; --accent-soft:#173029;
+  --num:#e0a35a; --kill:#4cd07c; --kill-soft:#173023; --survive:#f0847d;
+  --survive-soft:#33201f; --nocov:#e0ab4c; --nocov-soft:#2f2717; --neutral:#7d879a;
+  --shadow: 0 1px 2px rgba(0,0,0,.3), 0 6px 24px -8px rgba(0,0,0,.5);
+}
+body{ margin:0; padding:0; background:var(--bg); color:var(--text);
+  font-family:'Karla','Segoe UI',system-ui,sans-serif; padding-inline:16px; padding-block:28px; }
+h1,h2,h3{ font-family:'Manrope',system-ui,sans-serif; text-wrap:balance; margin:0; }
+.mono{ font-family:'IBM Plex Mono',ui-monospace,monospace; font-variant-numeric:tabular-nums; }
+.wrap{ max-width:1040px; margin:0 auto; }
+header{ display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between;
+  gap:16px; padding-bottom:20px; margin-bottom:24px; border-bottom:1px solid var(--border); }
+.eyebrow{ font-size:.72rem; letter-spacing:.09em; text-transform:uppercase; color:var(--muted);
+  font-weight:600; margin-bottom:6px; }
+h1{ font-size:1.55rem; font-weight:700; }
+.run-meta{ display:flex; flex-wrap:wrap; gap:8px 14px; margin-top:8px; font-size:.85rem; color:var(--muted); }
+.run-meta strong{ color:var(--text); font-weight:600; }
+.header-right{ display:flex; flex-direction:column; align-items:flex-end; gap:8px; }
+.badge{ display:inline-flex; align-items:center; gap:6px; font-size:.78rem; font-weight:700;
+  padding:5px 12px; border-radius:100px; letter-spacing:.02em; }
+.badge.pass{ background:var(--kill-soft); color:var(--kill); }
+.badge.fail{ background:var(--survive-soft); color:var(--survive); }
+.badge.review{ background:var(--nocov-soft); color:var(--nocov); }
+.badge.sample{ background:var(--surface-2); color:var(--muted); font-weight:600; border:1px dashed var(--border); }
+.badge .dot{ width:6px; height:6px; border-radius:50%; background:currentColor; }
+section{ margin-bottom:36px; }
+.section-head{ display:flex; align-items:baseline; gap:10px; margin-bottom:14px; }
+.section-num{ font-family:'IBM Plex Mono',monospace; color:var(--accent); font-size:.8rem; font-weight:600; }
+h2{ font-size:1.05rem; font-weight:700; }
+.section-sub{ color:var(--muted); font-size:.83rem; margin-left:auto; }
+.stats{ display:grid; grid-template-columns:repeat(auto-fit,minmax(148px,1fr)); gap:1px;
+  background:var(--border); border:1px solid var(--border); border-radius:12px; overflow:hidden;
+  box-shadow:var(--shadow); }
+.stat{ background:var(--surface); padding:16px 16px 14px; display:flex; flex-direction:column;
+  gap:6px; min-width:0; }
+.stat-label{ font-size:.72rem; color:var(--muted); font-weight:600; text-transform:uppercase; letter-spacing:.05em; }
+.stat-value{ font-size:1.3rem; font-weight:700; font-family:'IBM Plex Mono',monospace;
+  font-variant-numeric:tabular-nums; line-height:1.15; word-break:break-word; }
+.stat-value.accent{ color:var(--accent); }
+.stat-value small{ font-size:.7rem; font-weight:600; color:var(--muted); margin-left:2px; }
+.table-card{ background:var(--surface); border:1px solid var(--border); border-radius:12px;
+  overflow:hidden; box-shadow:var(--shadow); }
+.table-scroll{ overflow-x:auto; }
+table{ width:100%; border-collapse:collapse; font-size:.86rem; min-width:520px; }
+thead th{ text-align:left; font-size:.7rem; text-transform:uppercase; letter-spacing:.05em; font-weight:700;
+  color:var(--muted); padding:11px 16px; background:var(--surface-2); border-bottom:1px solid var(--border);
+  white-space:nowrap; }
+tbody td{ padding:11px 16px; border-bottom:1px solid var(--border); vertical-align:middle; }
+tbody tr:last-child td{ border-bottom:none; }
+tbody tr.total td{ font-weight:700; background:var(--surface-2); }
+td.num, th.num{ text-align:right; font-family:'IBM Plex Mono',monospace; font-variant-numeric:tabular-nums; }
+td.file{ font-family:'IBM Plex Mono',monospace; font-size:.82rem; }
+.pill{ display:inline-flex; padding:2px 9px; border-radius:100px; font-size:.75rem; font-weight:700; }
+.pill.add{ background:var(--kill-soft); color:var(--kill); }
+.pill.flat{ background:var(--surface-2); color:var(--muted); }
+.steps{ display:flex; flex-direction:column; gap:1px; background:var(--border);
+  border:1px solid var(--border); border-radius:12px; overflow:hidden; box-shadow:var(--shadow); }
+.step{ background:var(--surface); display:flex; gap:14px; padding:14px 16px; align-items:flex-start; }
+.step-flag{ flex:none; width:22px; height:22px; border-radius:6px; display:flex; align-items:center;
+  justify-content:center; font-size:.7rem; font-weight:700; margin-top:1px; }
+.step-flag.open{ background:var(--survive-soft); color:var(--survive); }
+.step-flag.watch{ background:var(--nocov-soft); color:var(--nocov); }
+.step-flag.done{ background:var(--kill-soft); color:var(--kill); }
+.step-body{ display:flex; flex-direction:column; gap:2px; }
+.step-title{ font-weight:600; font-size:.88rem; }
+.step-detail{ color:var(--muted); font-size:.82rem; }
+.empty{ padding:16px; color:var(--muted); font-size:.85rem; }
+footer{ margin-top:8px; padding-top:16px; border-top:1px solid var(--border); color:var(--muted); font-size:.78rem; }
+@media (max-width:640px){ header{ align-items:flex-start; flex-direction:column; } .header-right{ align-items:flex-start; } h1{ font-size:1.25rem; } }
+</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Karla:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600;700&display=swap">
+</head><body>
+<div class="wrap">
+
+  <header>
+    <div>
+      <div class="eyebrow">Mutation Testing &middot; Agent Run Report</div>
+      <h1>Mutation Run Report</h1>
+      <div class="run-meta">
+        <span>Repository <strong class="mono">QA-RM_Testing_Gates</strong></span>
+        <span>&middot;</span>
+        <span>Branch <strong class="mono">test/mutation-agent-verification</strong></span>
+        <span>&middot;</span>
+        <span>Commit <strong class="mono">d6f642d</strong></span>
+        <span>&middot;</span>
+        <span>Run ID <strong class="mono">run-1792421362</strong></span>
+      </div>
+      <div class="run-meta">
+        <span>Report scope <strong>Round 1</strong> (Round 1 only)</span>
+      </div>
+    </div>
+    <div class="header-right">
+      
+      <span class="badge pass"><span class="dot"></span>Gate: PASS (threshold 80%)</span>
+    </div>
+  </header>
+
+<section><div class="section-head"><span class="section-num">01</span><h2>Executive Summary</h2></div><div class="stats"><div class="stat"><span class="stat-label">Language</span><span class="stat-value">Typescript</span></div><div class="stat"><span class="stat-label">Engine</span><span class="stat-value">stryker</span></div><div class="stat"><span class="stat-label">Run Started (UTC)</span><span class="stat-value">2026-10-19 14:49:22</span></div><div class="stat"><span class="stat-label">Run Completed (UTC)</span><span class="stat-value">2026-10-19 14:49:28</span></div><div class="stat"><span class="stat-label">Mutation Score</span><span class="stat-value accent" style="font-size:1.1rem">100.0<small>%</small></span></div><div class="stat"><span class="stat-label">Mutations Generated</span><span class="stat-value">5</span></div><div class="stat"><span class="stat-label">Mutations Killed</span><span class="stat-value">5</span></div><div class="stat"><span class="stat-label">Mutations Survived</span><span class="stat-value">0</span></div><div class="stat"><span class="stat-label">Tests Examined</span><span class="stat-value">1</span></div><div class="stat"><span class="stat-label">Total Tests Run</span><span class="stat-value">1</span></div><div class="stat"><span class="stat-label">New Tests Added</span><span class="stat-value">0</span></div></div></section><section><div class="section-head"><span class="section-num">02</span><h2>Remediation Rounds</h2><span class="section-sub">Round-by-round breakdown · Round 1 only</span></div><div class="table-card"><div class="table-scroll"><table><thead><tr><th>Round</th><th class="num">Score before</th><th class="num">Score after</th><th class="num">Killed</th><th class="num">Survived</th><th class="num">Tests added</th><th class="num">Duration</th></tr></thead><tbody><tr><td class="file">Round 1</td><td class="num">100.0%</td><td class="num">&ndash;</td><td class="num">5</td><td class="num">0</td><td class="num">&ndash;</td><td class="num">6 sec</td></tr></tbody></table></div></div></section><section><div class="section-head"><span class="section-num">03</span><h2>Mutator Performance Analysis</h2><span class="section-sub">Kill rate by mutator type</span></div><div class="table-card"><div class="table-scroll"><table><thead><tr><th>Mutator</th><th class="num">Generated</th><th class="num">Killed</th><th class="num">Survived</th><th class="num">Kill rate</th></tr></thead><tbody><tr><td class="file">ArithmeticOperator</td><td class="num">2</td><td class="num">2</td><td class="num">0</td><td class="num">100.0%</td></tr><tr><td class="file">ConditionalExpression</td><td class="num">2</td><td class="num">2</td><td class="num">0</td><td class="num">100.0%</td></tr><tr><td class="file">EqualityOperator</td><td class="num">1</td><td class="num">1</td><td class="num">0</td><td class="num">100.0%</td></tr><tr class="total"><td>Total</td><td class="num">5</td><td class="num">5</td><td class="num">0</td><td class="num">100.0%</td></tr></tbody></table></div></div></section><section><div class="section-head"><span class="section-num">04</span><h2>Timing Analysis</h2><span class="section-sub">Wall-clock duration per phase</span></div><div class="table-card"><div class="table-scroll"><table><thead><tr><th>Phase</th><th class="num">Duration</th></tr></thead><tbody><tr><td class="file">Scope resolution (target files)</td><td class="num">0 sec</td></tr><tr><td class="file">Language & engine detection</td><td class="num">0 sec</td></tr><tr><td class="file">Arid filter</td><td class="num">0 sec</td></tr><tr><td class="file">Mutation run (round 1)</td><td class="num">6 sec</td></tr><tr class="total"><td>Total</td><td class="num">6 sec</td></tr></tbody></table></div></div></section><section><div class="section-head"><span class="section-num">05</span><h2>Token Consumption</h2><span class="section-sub">LLM usage · orchestration</span></div><div class="table-card"><div class="table-scroll"><table><thead><tr><th>Phase</th><th class="num">inputTokens</th><th class="num">outputTokens</th><th class="num">totalTokens</th></tr></thead><tbody><tr><td class="file">Orchestration (agent)</td><td class="num">8</td><td class="num">66</td><td class="num">74</td></tr><tr><td class="file">Script (steps 1-4, 6)</td><td class="num">0</td><td class="num">0</td><td class="num">0</td></tr><tr class="total"><td>Total</td><td class="num">8</td><td class="num">66</td><td class="num">74</td></tr></tbody></table></div></div></section><section><div class="section-head"><span class="section-num">06</span><h2>Next Steps</h2><span class="section-sub">Follow-up actions from this run</span></div><div class="steps"><div class="step"><span class="step-flag done">1</span><div class="step-body"><span class="step-title">Attach this report to the tracking issue</span><span class="step-detail">Gate passed at 100.0% against a 80% threshold.</span></div></div></div></section>
+<footer>Generated by html_report.py from this run's own <span class="mono">gate.json</span> / <span class="mono">results.json</span> / <span class="mono">telemetry.json</span> / <span class="mono">mutation-wizard.log</span>. No LLM involved in producing this page.</footer>
+</div>
+</body></html>

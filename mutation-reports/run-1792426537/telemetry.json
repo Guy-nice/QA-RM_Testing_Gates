@@ -1,0 +1,139 @@
+{
+  "runStartMs": 1792426538192,
+  "steps": {
+    "step1": {
+      "wallClockMs": 1,
+      "tokensIn": 0,
+      "tokensOut": 0,
+      "tokensTotal": 0,
+      "apiCalls": 0,
+      "toolCalls": 1,
+      "languages": [
+        "typescript"
+      ],
+      "tools": [
+        "stryker"
+      ],
+      "polyglot": false
+    },
+    "step2": {
+      "wallClockMs": 46,
+      "tokensIn": 0,
+      "tokensOut": 0,
+      "tokensTotal": 0,
+      "apiCalls": 0,
+      "toolCalls": 1,
+      "scope": "branch",
+      "scopeDetail": "merge-base with HEAD~1",
+      "changedFiles": [
+        "src/calculator.ts"
+      ],
+      "targetClasses": [
+        "src/calculator.ts"
+      ],
+      "languages": [
+        "typescript"
+      ],
+      "skipped": []
+    },
+    "step3": {
+      "wallClockMs": 1,
+      "tokensIn": 0,
+      "tokensOut": 0,
+      "tokensTotal": 0,
+      "apiCalls": 0,
+      "toolCalls": 1,
+      "files": {
+        "src/calculator.ts": {
+          "language": "typescript",
+          "totalLines": 33,
+          "aridLines": [
+            3,
+            4,
+            7,
+            8,
+            12,
+            14,
+            15,
+            19,
+            21,
+            22,
+            25,
+            26,
+            29,
+            30,
+            33
+          ],
+          "equivalentLines": [],
+          "aridPct": 45.5,
+          "error": null
+        }
+      }
+    },
+    "step4": {
+      "wallClockMs": 9366,
+      "tokensIn": 0,
+      "tokensOut": 0,
+      "tokensTotal": 0,
+      "apiCalls": 0,
+      "toolCalls": 1,
+      "tools": [
+        "stryker"
+      ],
+      "summary": {
+        "total": 4,
+        "killed": 2,
+        "survived": 2,
+        "no_coverage": 0,
+        "errors": 0,
+        "non_viable": 0,
+        "mutation_score": 50.0,
+        "test_strength": 50.0,
+        "kill_ratio": 50.0,
+        "suppressed": 0
+      },
+      "perLanguage": {
+        "typescript": {
+          "total": 4,
+          "killed": 2,
+          "survived": 2,
+          "no_coverage": 0,
+          "errors": 0,
+          "non_viable": 0,
+          "mutation_score": 50.0,
+          "test_strength": 50.0,
+          "kill_ratio": 50.0
+        }
+      },
+      "survivors": 2,
+      "suppressed": 0,
+      "outOfDiffScope": 0
+    },
+    "step5_handoff": {
+      "wallClockMs": 0,
+      "tokensIn": 0,
+      "tokensOut": 0,
+      "tokensTotal": 0,
+      "apiCalls": 0,
+      "toolCalls": 1,
+      "promptPath": null,
+      "skipped": "remediation not enabled"
+    }
+  },
+  "totals": {
+    "scriptTokensIn": 0,
+    "scriptTokensOut": 0,
+    "scriptTokensTotal": 0,
+    "scriptApiCalls": 0,
+    "toolCalls": 5,
+    "note": "These zeros cover the SCRIPTED steps only -- they are Python and make no API calls. They do NOT include the orchestrating agent's own token usage (its system prompt, this script's stdout read back into context, and its reasoning). Report that number separately from the client."
+  },
+  "gate": {
+    "verdict": "FAIL",
+    "score": 50.0,
+    "threshold": 80,
+    "metric": "mutation_score"
+  },
+  "runEndMs": 1792426547615,
+  "totalWallClockMs": 9423
+}

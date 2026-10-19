@@ -1,0 +1,32 @@
+======================================================================
+MUTATION TESTING RESULTS -- polyglot lightweight runner
+----------------------------------------------------------------------
+Run           : run-1792422025
+Date          : 2026-10-19 18:00
+Languages     : typescript
+Engines       : stryker
+Files scoped  : 1
+                  src/calculator.ts
+----------------------------------------------------------------------
+GATE: PASS   (mutation score >= 80%)
+
+  Mutation score : 100.0%  ->  100.0%
+  Test strength  : 100.0%  ->  100.0%   (informational only)
+  Mutants closed : 0
+----------------------------------------------------------------------
+MUTANT BREAKDOWN (after)
+  Generated   : 5
+  Scored      : 5  (generated minus non-viable)
+  Killed      : 5
+  Survived    : 0
+  No coverage : 0
+----------------------------------------------------------------------
+TESTS ADDED : 0
+----------------------------------------------------------------------
+REMAINING WORK
+  Needs judgement (SURVIVED)   : 0
+  Coverage backlog (NO_COVER)  : 0
+----------------------------------------------------------------------
+Wall-clock time : 2.0s
+Script tokens   : 0 (steps 1-4 and 6 are deterministic Python). This is NOT the run's total cost -- the orchestrating agent's own usage is measured separately by token_report.py.
+======================================================================

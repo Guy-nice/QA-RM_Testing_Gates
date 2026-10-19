@@ -31,3 +31,7 @@ export function isEven(n: number): boolean {
 export function isOdd(n: number): boolean {
   return n % 2 !== 0;
 }
+
+export function abs(n: number): number {
+  return n < 0 ? -n : n;
+}

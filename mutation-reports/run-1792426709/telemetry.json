@@ -1,0 +1,14 @@
+{
+  "runStartMs": 1792426710274,
+  "steps": {},
+  "totals": {
+    "scriptTokensIn": 0,
+    "scriptTokensOut": 0,
+    "scriptTokensTotal": 0,
+    "scriptApiCalls": 0,
+    "toolCalls": 0,
+    "note": "These zeros cover the SCRIPTED steps only -- they are Python and make no API calls. They do NOT include the orchestrating agent's own token usage (its system prompt, this script's stdout read back into context, and its reasoning). Report that number separately from the client."
+  },
+  "runEndMs": 1792426710302,
+  "totalWallClockMs": 28
+}

@@ -1,0 +1,90 @@
+{
+  "run_id": "run-1792422820",
+  "file": "src/calculator.ts",
+  "target_files": [
+    "src/calculator.ts"
+  ],
+  "languages": [
+    "typescript"
+  ],
+  "tools": [
+    "stryker"
+  ],
+  "gate": "PASS",
+  "gate_metric": "mutation_score",
+  "threshold": 80,
+  "summary_before": {
+    "total": 5,
+    "killed": 5,
+    "survived": 0,
+    "no_coverage": 0,
+    "errors": 0,
+    "non_viable": 0,
+    "mutation_score": 100.0,
+    "test_strength": 100.0,
+    "kill_ratio": 100.0,
+    "suppressed": 0
+  },
+  "summary_after": {
+    "total": 5,
+    "killed": 5,
+    "survived": 0,
+    "no_coverage": 0,
+    "errors": 0,
+    "non_viable": 0,
+    "mutation_score": 100.0,
+    "test_strength": 100.0,
+    "kill_ratio": 100.0,
+    "suppressed": 0
+  },
+  "per_language": {
+    "typescript": {
+      "total": 5,
+      "killed": 5,
+      "survived": 0,
+      "no_coverage": 0,
+      "errors": 0,
+      "non_viable": 0,
+      "mutation_score": 100.0,
+      "test_strength": 100.0,
+      "kill_ratio": 100.0
+    }
+  },
+  "mutation_score_before": 100.0,
+  "mutation_score_after": 100.0,
+  "kill_ratio_before": 100.0,
+  "kill_ratio_after": 100.0,
+  "survivors_before": [],
+  "survivors_after": [],
+  "new_tests_count": 0,
+  "elapsed_seconds": 1.9439101219177246,
+  "per_language_before": {
+    "typescript": {
+      "total": 5,
+      "killed": 5,
+      "survived": 0,
+      "no_coverage": 0,
+      "errors": 0,
+      "non_viable": 0,
+      "mutation_score": 100.0,
+      "test_strength": 100.0,
+      "kill_ratio": 100.0
+    }
+  },
+  "include_untested": false,
+  "exclude_tests": [],
+  "module": "",
+  "diff_map": {
+    "src/calculator.ts": [
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29
+    ]
+  },
+  "remediate": false
+}

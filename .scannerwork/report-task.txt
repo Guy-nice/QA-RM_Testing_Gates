@@ -1,0 +1,6 @@
+projectKey=qa-rm-testing-gates
+serverUrl=https://sonartest.nice.com
+serverVersion=2026.1.2.121356
+dashboardUrl=https://sonartest.nice.com/dashboard?id=qa-rm-testing-gates&pullRequest=4
+ceTaskId=c49b610c-402f-4417-8801-654937e1acb6
+ceTaskUrl=https://sonartest.nice.com/api/ce/task?id=c49b610c-402f-4417-8801-654937e1acb6

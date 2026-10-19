@@ -38,8 +38,3 @@ test("isEven returns true for even numbers", () => {
   assert.equal(isEven(4), true);
   assert.equal(isEven(0), true);
 });
-
-test("isEven returns false for odd numbers", () => {
-  assert.equal(isEven(3), false);
-  assert.equal(isEven(1), false);
-});

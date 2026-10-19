@@ -1,0 +1,48 @@
+{
+  "runId": "run-1792422820",
+  "verdict": "PASS",
+  "gateMetric": "mutation_score",
+  "threshold": 80,
+  "score": 100.0,
+  "mutationScore": 100.0,
+  "testStrength": 100.0,
+  "total": 5,
+  "killed": 5,
+  "survived": 0,
+  "noCoverage": 0,
+  "errors": 0,
+  "nonViable": 0,
+  "suppressed": 0,
+  "outOfDiffScope": 0,
+  "llmRequired": false,
+  "remediationEnabled": false,
+  "languages": [
+    "typescript"
+  ],
+  "tools": [
+    "stryker"
+  ],
+  "perLanguage": {
+    "typescript": {
+      "total": 5,
+      "killed": 5,
+      "survived": 0,
+      "no_coverage": 0,
+      "errors": 0,
+      "non_viable": 0,
+      "mutation_score": 100.0,
+      "test_strength": 100.0,
+      "kill_ratio": 100.0
+    }
+  },
+  "targetFiles": [
+    "src/calculator.ts"
+  ],
+  "testFiles": {
+    "src/calculator.ts": "src/calculator.test.ts"
+  },
+  "survivorsForLlm": [],
+  "noCoverageMutants": [],
+  "artifactsDir": "/private/tmp/QA-RM_Testing_Gates/mutation-reports/run-1792422820",
+  "module": ""
+}

@@ -1,0 +1,11 @@
+
+============================================================
+  MUTATION RUNNER -- polyglot lightweight edition
+============================================================
+
+  Repo : QA-RM_Testing_Gates  (git@github.com:Guy-nice/QA-RM_Testing_Gates.git)
+  Path : /private/tmp/QA-RM_Testing_Gates
+[Step 2] Resolving target files...
+         scope: branch (merge-base with HEAD~1)
+
+  No changed source files in scope. Nothing to mutate.

@@ -1,0 +1,73 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://json.schemastore.org/sarif-2.1.0.json",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "Unified Mutation Testing",
+          "rules": [
+            {
+              "id": "mutation-testing:survived:ArithmeticOperator",
+              "shortDescription": {
+                "text": "A test executes this line but does not kill the mutation (ArithmeticOperator): n * 2"
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              }
+            },
+            {
+              "id": "mutation-testing:survived:ConditionalExpression",
+              "shortDescription": {
+                "text": "A test executes this line but does not kill the mutation (ConditionalExpression): true"
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              }
+            }
+          ]
+        }
+      },
+      "results": [
+        {
+          "ruleId": "mutation-testing:survived:ArithmeticOperator",
+          "message": {
+            "text": "A test executes this line but does not kill the mutation (ArithmeticOperator): n * 2"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/calculator.ts"
+                },
+                "region": {
+                  "startLine": 32,
+                  "endLine": 32
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "mutation-testing:survived:ConditionalExpression",
+          "message": {
+            "text": "A test executes this line but does not kill the mutation (ConditionalExpression): true"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/calculator.ts"
+                },
+                "region": {
+                  "startLine": 32,
+                  "endLine": 32
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

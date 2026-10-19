@@ -1,0 +1,98 @@
+
+============================================================
+  MUTATION RUNNER -- polyglot lightweight edition
+============================================================
+
+  Repo : QA-RM_Testing_Gates  (git@github.com:Guy-nice/QA-RM_Testing_Gates.git)
+  Path : /private/tmp/QA-RM_Testing_Gates
+[Step 2] Resolving target files...
+         scope: branch (merge-base with HEAD~2)
+         1 file(s) changed across 1 language(s):
+           [typescript] calculator.ts
+
+[Step 1] Detecting languages and engines for the files in scope...
+         typescript   -> stryker         engine: ok
+
+         1 target(s) will be mutated:
+           [typescript] src/calculator.ts
+
+[Step 3] Running arid filter...
+         [typescript] calculator.ts: 44.8% arid (13/29 lines), 0 equivalent-mutant line(s)
+
+[Step 4] Running stryker for typescript (1 file(s))...
+[MUT] test narrowing skipped: karma.projectType is None, not 'angular-cli' -- test narrowing not applicable
+[MUT] /private/tmp/QA-RM_Testing_Gates/node_modules/.bin/stryker run --reporters json,progress --mutate src/calculator.ts:23-24,src/calculator.ts:27-28
+[32m18:03:51 (67571) INFO ProjectReader[39m Found 1 of 38 file(s) to be mutated.
+[32m18:03:51 (67571) INFO Instrumenter[39m Instrumented 1 source file(s) with 5 mutant(s)
+[32m18:03:51 (67571) INFO ConcurrencyTokenProvider[39m Creating 9 test runner process(es).
+[32m18:03:52 (67571) INFO BroadcastReporter[39m Detected that current console does not support the "progress" reporter, downgrading to "progress-append-only" reporter
+[32m18:03:52 (67571) INFO DryRunExecutor[39m Starting initial test run (command test runner with "perTest" coverage analysis). This may take a while.
+[32m18:03:52 (67571) INFO DryRunExecutor[39m Initial test run succeeded. Ran 1 tests in 0 seconds (net 383 ms, overhead 0 ms).
+[32m18:03:52 (67571) INFO MutationTestReportHelper[39m Final mutation score of 100.00 is greater than or equal to break threshold 80
+[32m18:03:52 (67571) INFO JsonReporter[39m Your report can be found at: file:///private/tmp/QA-RM_Testing_Gates/mutation-reports/mutation.json
+[32m18:03:52 (67571) INFO MutationTestExecutor[39m Done in 1 second.
+  (full output: /private/tmp/QA-RM_Testing_Gates/mutation-reports/run-1792422231/pit/stryker.log)
+
+         Mutation score : 100.0% (5/5)
+         Test strength  : 100.0%  (informational only)
+         SURVIVED 0 | NO_COVERAGE 0 | ERRORS 0 | suppressed (arid/equivalent) 0
+
+============================================================
+  GATE: PASS   (mutation score 100.0% vs threshold 80%)
+============================================================
+  mutation score : 100.0%
+  test strength  : 100.0%  (not the gate)
+  survived       : 0
+  no coverage    : 0
+
+  Threshold met -- skipping test generation entirely.
+  0 script tokens spent.
+============================================================
+
+======================================================================
+MUTATION TESTING RESULTS -- polyglot lightweight runner
+----------------------------------------------------------------------
+Run           : run-1792422231
+Date          : 2026-10-19 18:03
+Languages     : typescript
+Engines       : stryker
+Files scoped  : 1
+                  src/calculator.ts
+----------------------------------------------------------------------
+GATE: PASS   (mutation score >= 80%)
+
+  Mutation score : 100.0%  ->  100.0%
+  Test strength  : 100.0%  ->  100.0%   (informational only)
+  Mutants closed : 0
+----------------------------------------------------------------------
+MUTANT BREAKDOWN (after)
+  Generated   : 5
+  Scored      : 5  (generated minus non-viable)
+  Killed      : 5
+  Survived    : 0
+  No coverage : 0
+----------------------------------------------------------------------
+TESTS ADDED : 0
+----------------------------------------------------------------------
+REMAINING WORK
+  Needs judgement (SURVIVED)   : 0
+  Coverage backlog (NO_COVER)  : 0
+----------------------------------------------------------------------
+Wall-clock time : 1.7s
+Script tokens   : 0 (steps 1-4 and 6 are deterministic Python). This is NOT the run's total cost -- the orchestrating agent's own usage is measured separately by token_report.py.
+======================================================================
+
+Report saved to: /private/tmp/QA-RM_Testing_Gates/mutation-reports/run-1792422231
+  report.txt   /private/tmp/QA-RM_Testing_Gates/mutation-reports/run-1792422231/report.txt
+  results.json /private/tmp/QA-RM_Testing_Gates/mutation-reports/run-1792422231/results.json
+
+[Step 7] Sonar report + upload...
+  report: /private/tmp/QA-RM_Testing_Gates/.sonar/mutation-report.json  (overall 5 mutants, new 5)
+  Sonar target : https://sonartest.nice.com  project=qa-rm-testing-gates  PR #4
+  WARNING: sonar.javascript.lcov.reportPaths=coverage/lcov.info not found -- this scan would publish an analysis without that coverage
+  WARNING: sonar.typescript.lcov.reportPaths=coverage/lcov.info not found -- this scan would publish an analysis without that coverage
+  running: /opt/homebrew/bin/sonar-scanner -Dsonar.host.url=https://sonartest.nice.com -Dsonar.projectKey=qa-rm-testing-gates -Dsonar.pullrequest.key=4 -Dsonar.pullrequest.branch=test/mutation-agent-verification -Dsonar.pullrequest.base=main
+    18:04:02.232 INFO  Mutation Report: published mutation_score=100.0 (1 files, 0 issues) from /tmp/QA-RM_Testing_Gates/.sonar/mutation-report.json
+    18:04:07.630 WARN  No coverage information will be saved because all LCOV files cannot be found.
+  Sonar quality gate: OK
+  dashboard: https://sonartest.nice.com/dashboard?id=qa-rm-testing-gates&pullRequest=4

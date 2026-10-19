@@ -1,0 +1,83 @@
+{
+  "runId": "run-1792423100",
+  "verdict": "FAIL",
+  "gateMetric": "mutation_score",
+  "threshold": 80,
+  "score": 50.0,
+  "mutationScore": 50.0,
+  "testStrength": 50.0,
+  "total": 4,
+  "killed": 2,
+  "survived": 2,
+  "noCoverage": 0,
+  "errors": 0,
+  "nonViable": 0,
+  "suppressed": 0,
+  "outOfDiffScope": 0,
+  "llmRequired": false,
+  "remediationEnabled": false,
+  "languages": [
+    "typescript"
+  ],
+  "tools": [
+    "stryker"
+  ],
+  "perLanguage": {
+    "typescript": {
+      "total": 4,
+      "killed": 2,
+      "survived": 2,
+      "no_coverage": 0,
+      "errors": 0,
+      "non_viable": 0,
+      "mutation_score": 50.0,
+      "test_strength": 50.0,
+      "kill_ratio": 50.0
+    }
+  },
+  "targetFiles": [
+    "src/calculator.ts"
+  ],
+  "testFiles": {
+    "src/calculator.ts": "src/calculator.test.ts"
+  },
+  "survivorsForLlm": [
+    {
+      "status": "SURVIVED",
+      "detected": false,
+      "line": 32,
+      "operator": "ArithmeticOperator",
+      "description": "n * 2",
+      "class": "",
+      "method": "",
+      "source_file": "calculator.ts",
+      "file": "src/calculator.ts",
+      "index": "3",
+      "tests_run": 1,
+      "killing_test": "",
+      "language": "typescript",
+      "tool": "stryker",
+      "category": "survived"
+    },
+    {
+      "status": "SURVIVED",
+      "detected": false,
+      "line": 32,
+      "operator": "ConditionalExpression",
+      "description": "true",
+      "class": "",
+      "method": "",
+      "source_file": "calculator.ts",
+      "file": "src/calculator.ts",
+      "index": "0",
+      "tests_run": 1,
+      "killing_test": "",
+      "language": "typescript",
+      "tool": "stryker",
+      "category": "survived"
+    }
+  ],
+  "noCoverageMutants": [],
+  "artifactsDir": "/private/tmp/QA-RM_Testing_Gates/mutation-reports/run-1792423100",
+  "module": ""
+}

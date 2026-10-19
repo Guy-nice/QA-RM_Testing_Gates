@@ -1,0 +1,94 @@
+{
+  "runId": "run-1792426709",
+  "verdict": "NOTHING_TO_MUTATE",
+  "gateMetric": "mutation_score",
+  "score": null,
+  "threshold": null,
+  "llmRequired": false,
+  "reason": "No changed source files in scope. Nothing to mutate.",
+  "scope": "branch",
+  "scopeDetail": "merge-base with HEAD~1",
+  "skipped": [
+    {
+      "file": ".scannerwork/architecture/ts/src_calculator_test_ts.udg",
+      "reason": "not a supported source extension"
+    },
+    {
+      "file": ".scannerwork/architecture/ts/src_calculator_ts.udg",
+      "reason": "not a supported source extension"
+    },
+    {
+      "file": ".scannerwork/report-task.txt",
+      "reason": "not a supported source extension"
+    },
+    {
+      "file": "mutation-reports/LATEST",
+      "reason": "not a supported source extension"
+    },
+    {
+      "file": "mutation-reports/mutation.json",
+      "reason": "not a supported source extension"
+    },
+    {
+      "file": "mutation-reports/run-1792423100/gate.json",
+      "reason": "not a supported source extension"
+    },
+    {
+      "file": "mutation-reports/run-1792423100/mutation-wizard.log",
+      "reason": "not a supported source extension"
+    },
+    {
+      "file": "mutation-reports/run-1792423100/pit/stryker.log",
+      "reason": "not a supported source extension"
+    },
+    {
+      "file": "mutation-reports/run-1792423100/results.json",
+      "reason": "not a supported source extension"
+    },
+    {
+      "file": "mutation-reports/run-1792423100/sonar/mutation-testing.sarif.json",
+      "reason": "not a supported source extension"
+    },
+    {
+      "file": "mutation-reports/run-1792423100/telemetry.json",
+      "reason": "not a supported source extension"
+    },
+    {
+      "file": "mutation-reports/run-1792426537/gate.json",
+      "reason": "not a supported source extension"
+    },
+    {
+      "file": "mutation-reports/run-1792426537/mutation-wizard.log",
+      "reason": "not a supported source extension"
+    },
+    {
+      "file": "mutation-reports/run-1792426537/pit/stryker.log",
+      "reason": "not a supported source extension"
+    },
+    {
+      "file": "mutation-reports/run-1792426537/results.json",
+      "reason": "not a supported source extension"
+    },
+    {
+      "file": "mutation-reports/run-1792426537/sonar/mutation-report.json",
+      "reason": "not a supported source extension"
+    },
+    {
+      "file": "mutation-reports/run-1792426537/telemetry.json",
+      "reason": "not a supported source extension"
+    },
+    {
+      "file": "src/calculator.test.ts",
+      "reason": "test file"
+    },
+    {
+      "file": "mutation-reports/.wizard.lock",
+      "reason": "not a supported source extension"
+    },
+    {
+      "file": "mutation-reports/run-1792426709/mutation-wizard.log",
+      "reason": "not a supported source extension"
+    }
+  ],
+  "artifactsDir": "/private/tmp/QA-RM_Testing_Gates/mutation-reports/run-1792426709"
+}

@@ -1,0 +1,10 @@
+[32m19:15:44 (90483) INFO ProjectReader[39m Found 1 of 82 file(s) to be mutated.
+[32m19:15:44 (90483) INFO Instrumenter[39m Instrumented 1 source file(s) with 4 mutant(s)
+[32m19:15:44 (90483) INFO ConcurrencyTokenProvider[39m Creating 9 test runner process(es).
+[32m19:15:45 (90483) INFO BroadcastReporter[39m Detected that current console does not support the "progress" reporter, downgrading to "progress-append-only" reporter
+[32m19:15:45 (90483) INFO DryRunExecutor[39m Starting initial test run (command test runner with "perTest" coverage analysis). This may take a while.
+[32m19:15:47 (90483) INFO DryRunExecutor[39m Initial test run succeeded. Ran 1 tests in 1 second (net 1967 ms, overhead 0 ms).
+[91m19:15:47 (90483) ERROR MutationTestReportHelper[39m Final mutation score 50.00 under breaking threshold 80, setting exit code to 1 (failure).
+[32m19:15:47 (90483) INFO MutationTestReportHelper[39m (improve mutation score or set `thresholds.break = null` to prevent this error in the future)
+[32m19:15:47 (90483) INFO JsonReporter[39m Your report can be found at: file:///private/tmp/QA-RM_Testing_Gates/mutation-reports/mutation.json
+[32m19:15:47 (90483) INFO MutationTestExecutor[39m Done in 3 seconds.

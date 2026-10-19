@@ -28,3 +28,9 @@ jobs:
 
       - name: Run mutation testing (Stryker)
         run: npx stryker run
+
+      - name: SonarQube Scan
+        uses: SonarSource/sonarqube-scan-action@master
+        env:
+          SONAR_HOST_URL: https://sonartest.nice.com
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}

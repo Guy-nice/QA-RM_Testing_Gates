@@ -29,6 +29,11 @@ jobs:
       - name: Run mutation testing (Stryker)
         run: npx stryker run
 
+      - name: Prepare mutation report for Sonar
+        run: |
+          mkdir -p .sonar
+          cp mutation-reports/mutation.json .sonar/mutation-report.json
+
       - name: Download SonarQube Scanner
         run: |
           mkdir -p ~/.sonar

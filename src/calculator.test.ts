@@ -53,3 +53,7 @@ test("modulo returns the remainder of division", () => {
   assert.equal(modulo(10, 3), 1);
   assert.equal(modulo(8, 2), 0);
 });
+
+test("modulo throws on modulo by zero", () => {
+  assert.throws(() => modulo(5, 0), /Modulo by zero/);
+});

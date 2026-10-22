@@ -30,9 +30,9 @@ jobs:
         run: npx stryker run
 
       - name: Prepare mutation report for Sonar
-        run: |
-          mkdir -p .sonar
-          cp mutation-reports/mutation.json .sonar/mutation-report.json
+        # Stryker's raw JSON is not the report the Sonar mutation plugin reads
+        # (it needs `summary`, and `mutants` for actionable survivors), so convert it.
+        run: node scripts/sonar-mutation-report.mjs mutation-reports/mutation.json .sonar/mutation-report.json
 
       - name: Download SonarQube Scanner
         run: |
@@ -46,6 +46,7 @@ jobs:
         run: |
           ~/.sonar/sonar-scanner-6.1.0.4477-linux-x64/bin/sonar-scanner \
             -Dsonar.projectBaseDir=. \
+            -Dsonar.mutation.reportPath=.sonar/mutation-report.json \
             -Dsonar.host.url=https://sonartest.nice.com \
             -Dsonar.token=${{ secrets.SONAR_TOKEN }}
         env:

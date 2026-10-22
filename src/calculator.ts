@@ -27,3 +27,14 @@ export function multiply(a: number, b: number): number {
 export function isEven(n: number): boolean {
   return n % 2 === 0;
 }
+
+export function square(n: number): number {
+  return n * n;
+}
+
+export function modulo(a: number, b: number): number {
+  if (b === 0) {
+    throw new Error("Modulo by zero");
+  }
+  return a % b;
+}

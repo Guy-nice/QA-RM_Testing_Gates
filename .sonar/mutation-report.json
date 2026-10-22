@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "run": {
+    "runId": "run-1792653934",
+    "threshold": 80,
+    "round": 2,
+    "verdict": "PASS",
+    "tools": [
+      "stryker"
+    ],
+    "agentVersion": "2.0.0-rc2",
+    "commit": "d5519d6f532b4982fc7c34826e90373f508f5698",
+    "scoreBefore": 66.7,
+    "durationSec": 835
+  },
+  "summary": {
+    "overall": {
+      "total": 24,
+      "killed": 24,
+      "timedOut": 0,
+      "memoryError": 0,
+      "survived": 0,
+      "noCoverage": 0,
+      "unknown": 0,
+      "suppressed": 0,
+      "testsExecuted": 24,
+      "testKills": 24
+    },
+    "new": {
+      "total": 6,
+      "killed": 6,
+      "timedOut": 0,
+      "memoryError": 0,
+      "survived": 0,
+      "noCoverage": 0,
+      "unknown": 0,
+      "suppressed": 0,
+      "testsExecuted": 6,
+      "testKills": 6
+    }
+  },
+  "languages": {
+    "typescript": {
+      "overall": {
+        "total": 24,
+        "killed": 24,
+        "timedOut": 0,
+        "memoryError": 0,
+        "survived": 0,
+        "noCoverage": 0,
+        "unknown": 0,
+        "suppressed": 0,
+        "testsExecuted": 24,
+        "testKills": 24
+      },
+      "new": {
+        "total": 6,
+        "killed": 6,
+        "timedOut": 0,
+        "memoryError": 0,
+        "survived": 0,
+        "noCoverage": 0,
+        "unknown": 0,
+        "suppressed": 0,
+        "testsExecuted": 6,
+        "testKills": 6
+      }
+    }
+  },
+  "files": {
+    "src/calculator.ts": {
+      "language": "typescript",
+      "changedLines": 11,
+      "lines": 22,
+      "overall": {
+        "total": 24,
+        "killed": 24,
+        "timedOut": 0,
+        "memoryError": 0,
+        "survived": 0,
+        "noCoverage": 0,
+        "unknown": 0,
+        "suppressed": 0,
+        "testsExecuted": 24,
+        "testKills": 24
+      },
+      "new": {
+        "total": 6,
+        "killed": 6,
+        "timedOut": 0,
+        "memoryError": 0,
+        "survived": 0,
+        "noCoverage": 0,
+        "unknown": 0,
+        "suppressed": 0,
+        "testsExecuted": 6,
+        "testKills": 6
+      }
+    }
+  },
+  "mutants": []
+}

@@ -50,6 +50,18 @@ function changedLines(file) {
   return lines;
 }
 
+// Language from the file extension, so the Sonar Languages tab is right for
+// every Stryker-supported file type, not just TypeScript.
+function languageOf(file) {
+  if (/\.(ts|tsx|mts|cts)$/.test(file)) return "typescript";
+  if (/\.(js|jsx|mjs|cjs)$/.test(file)) return "javascript";
+  return "other";
+}
+
+function sumInto(target, source) {
+  for (const key of Object.keys(target)) target[key] += source[key] ?? 0;
+}
+
 function emptyCounts() {
   return { total: 0, killed: 0, timedOut: 0, memoryError: 0, survived: 0, noCoverage: 0, unknown: 0, suppressed: 0, testsExecuted: 0, testKills: 0 };
 }
@@ -72,7 +84,7 @@ for (const [file, data] of Object.entries(stryker.files ?? {})) {
   const changed = changedLines(file);
   const fileOverall = emptyCounts();
   const fileNew = emptyCounts();
-  const lang = "typescript";
+  const lang = languageOf(file);
   const lineCount = (data.source ?? "").split("\n").length;
   let changedCount = 0;
 
@@ -120,14 +132,26 @@ delete overall.testKills;
 delete newOverall.testsExecuted;
 delete newOverall.testKills;
 
-languages[Object.values(files)[0]?.language ?? "typescript"] = {
-  overall,
-  new: newOverall,
-};
+// One entry per language, summed from its files.
+for (const f of Object.values(files)) {
+  const entry = (languages[f.language] ??= { overall: emptyCounts(), new: emptyCounts() });
+  sumInto(entry.overall, f.overall);
+  sumInto(entry.new, f.new);
+}
+
+// The gate verdict uses the same score as the plugin's gate: killed / total on
+// changed lines, timeouts not counted as killed. Threshold is Stryker's `break`.
+const threshold = stryker.thresholds?.break ?? 80;
+const newScore = newOverall.total ? (newOverall.killed / newOverall.total) * 100 : null;
+const verdict = newScore === null ? undefined : newScore >= threshold ? "PASS" : "FAIL";
 
 const report = {
   schemaVersion: 1,
   run: {
+    runId: `ci-${process.env.GITHUB_RUN_ID ?? Date.now()}`,
+    threshold,
+    round: 1,
+    ...(verdict ? { verdict } : {}),
     tools: ["stryker"],
     commit: (() => {
       try {

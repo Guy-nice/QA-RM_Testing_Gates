@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "run": {
+    "runId": "run-1792774763",
+    "threshold": 90,
+    "round": 2,
+    "verdict": "PASS",
+    "tools": [
+      "stryker"
+    ],
+    "agentVersion": "2.0.0-rc2",
+    "commit": "35c25acdda7f2e6f65c3f58594bc9017f3491699",
+    "scoreBefore": 83.7,
+    "durationSec": 586
+  },
+  "summary": {
+    "overall": {
+      "total": 49,
+      "killed": 48,
+      "timedOut": 0,
+      "memoryError": 0,
+      "survived": 1,
+      "noCoverage": 0,
+      "unknown": 0,
+      "suppressed": 0,
+      "testsExecuted": 49,
+      "testKills": 48
+    },
+    "new": {
+      "total": 49,
+      "killed": 48,
+      "timedOut": 0,
+      "memoryError": 0,
+      "survived": 1,
+      "noCoverage": 0,
+      "unknown": 0,
+      "suppressed": 0,
+      "testsExecuted": 49,
+      "testKills": 48
+    }
+  },
+  "languages": {
+    "typescript": {
+      "overall": {
+        "total": 49,
+        "killed": 48,
+        "timedOut": 0,
+        "memoryError": 0,
+        "survived": 1,
+        "noCoverage": 0,
+        "unknown": 0,
+        "suppressed": 0,
+        "testsExecuted": 49,
+        "testKills": 48
+      },
+      "new": {
+        "total": 49,
+        "killed": 48,
+        "timedOut": 0,
+        "memoryError": 0,
+        "survived": 1,
+        "noCoverage": 0,
+        "unknown": 0,
+        "suppressed": 0,
+        "testsExecuted": 49,
+        "testKills": 48
+      }
+    }
+  },
+  "files": {
+    ".claude/skills/run-mutation-workflow/scripts/src/calculator.ts": {
+      "language": "typescript",
+      "changedLines": 0,
+      "overall": {
+        "total": 49,
+        "killed": 48,
+        "timedOut": 0,
+        "memoryError": 0,
+        "survived": 1,
+        "noCoverage": 0,
+        "unknown": 0,
+        "suppressed": 0,
+        "testsExecuted": 49,
+        "testKills": 48
+      },
+      "new": {
+        "total": 49,
+        "killed": 48,
+        "timedOut": 0,
+        "memoryError": 0,
+        "survived": 1,
+        "noCoverage": 0,
+        "unknown": 0,
+        "suppressed": 0,
+        "testsExecuted": 49,
+        "testKills": 48
+      }
+    }
+  },
+  "mutants": [
+    {
+      "file": ".claude/skills/run-mutation-workflow/scripts/src/calculator.ts",
+      "line": 50,
+      "operator": "ConditionalExpression",
+      "status": "SURVIVED"
+    }
+  ]
+}

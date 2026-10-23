@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { add, subtract, isPositive, divide, multiply, isEven } from "./calculator.ts";
+import { add, subtract, isPositive, divide, multiply, isEven, square, modulo, cube, factorial, sign } from "./calculator.ts";
 
 test("add adds two numbers", () => {
   assert.equal(add(2, 3), 5);
@@ -42,4 +42,48 @@ test("isEven returns true for even numbers", () => {
 test("isEven returns false for odd numbers", () => {
   assert.equal(isEven(3), false);
   assert.equal(isEven(1), false);
+});
+
+test("square returns the square of a number", () => {
+  assert.equal(square(5), 25);
+  assert.equal(square(2), 4);
+});
+
+test("modulo returns the remainder of division", () => {
+  assert.equal(modulo(10, 3), 1);
+  assert.equal(modulo(8, 2), 0);
+});
+
+test("modulo throws on modulo by zero", () => {
+  assert.throws(() => modulo(5, 0), /Modulo by zero/);
+});
+
+test("cube returns the cube of a number", () => {
+  assert.equal(cube(2), 8);
+});
+
+test("factorial computes factorial correctly", () => {
+  assert.equal(factorial(0), 1);
+  assert.equal(factorial(1), 1);
+  assert.equal(factorial(2), 2);
+  assert.equal(factorial(3), 6);
+  assert.equal(factorial(4), 24);
+  assert.equal(factorial(5), 120);
+});
+
+test("factorial throws on negative numbers", () => {
+  assert.throws(() => factorial(-1), /Factorial of negative number/);
+});
+
+// Weak on purpose: only the positive branch is checked.
+test("sign returns 1 for a positive number", () => {
+  assert.equal(sign(5), 1);
+});
+
+test("sign_negativeNumber_returnsMinusOne", () => {
+  assert.equal(sign(-5), -1);
+});
+
+test("sign_zero_returnsZero", () => {
+  assert.equal(sign(0), 0);
 });

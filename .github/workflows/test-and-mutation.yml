@@ -41,6 +41,7 @@ jobs:
         run: |
           ~/.sonar/sonar-scanner-6.1.0.4477-linux-x64/bin/sonar-scanner \
             -Dsonar.projectBaseDir=. \
+            -Dsonar.mutation.reportPath=.sonar/mutation-report.json \
             -Dsonar.host.url=https://sonartest.nice.com \
             -Dsonar.token=${{ secrets.SONAR_TOKEN }}
         env:

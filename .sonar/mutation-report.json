@@ -1,89 +1,100 @@
 {
   "schemaVersion": 1,
   "run": {
-    "runId": "ci-1792735500771",
+    "runId": "run-1792739681",
     "threshold": 80,
     "round": 1,
-    "verdict": "PASS",
+    "verdict": "FAIL",
     "tools": [
       "stryker"
     ],
-    "commit": "d2fb6d85c7ca5c163e9bb4a34fcad66aa373caa5"
+    "agentVersion": "2.0.0-rc2",
+    "commit": "419e00f6eee7ed045d9697a111ea115d42b54c46",
+    "scoreBefore": 75.0,
+    "durationSec": 165
   },
   "summary": {
     "overall": {
-      "total": 35,
-      "killed": 35,
-      "timedOut": 0,
+      "total": 16,
+      "killed": 12,
+      "timedOut": 4,
       "memoryError": 0,
       "survived": 0,
       "noCoverage": 0,
       "unknown": 0,
-      "suppressed": 0
+      "suppressed": 0,
+      "testsExecuted": 12,
+      "testKills": 12
     },
     "new": {
-      "total": 9,
-      "killed": 9,
-      "timedOut": 0,
+      "total": 16,
+      "killed": 12,
+      "timedOut": 4,
       "memoryError": 0,
       "survived": 0,
       "noCoverage": 0,
       "unknown": 0,
-      "suppressed": 0
+      "suppressed": 0,
+      "testsExecuted": 12,
+      "testKills": 12
     }
   },
   "languages": {
     "typescript": {
       "overall": {
-        "total": 35,
-        "killed": 35,
-        "timedOut": 0,
+        "total": 16,
+        "killed": 12,
+        "timedOut": 4,
         "memoryError": 0,
         "survived": 0,
         "noCoverage": 0,
         "unknown": 0,
         "suppressed": 0,
-        "testsExecuted": 0,
-        "testKills": 0
+        "testsExecuted": 12,
+        "testKills": 12
       },
       "new": {
-        "total": 9,
-        "killed": 9,
-        "timedOut": 0,
+        "total": 16,
+        "killed": 12,
+        "timedOut": 4,
         "memoryError": 0,
         "survived": 0,
         "noCoverage": 0,
         "unknown": 0,
         "suppressed": 0,
-        "testsExecuted": 0,
-        "testKills": 0
+        "testsExecuted": 12,
+        "testKills": 12
       }
     }
   },
   "files": {
     "src/calculator.ts": {
       "language": "typescript",
-      "lines": 41,
-      "changedLines": 11,
+      "changedLines": 14,
+      "lines": 30,
       "overall": {
-        "total": 35,
-        "killed": 35,
-        "timedOut": 0,
+        "total": 16,
+        "killed": 12,
+        "timedOut": 4,
         "memoryError": 0,
         "survived": 0,
         "noCoverage": 0,
         "unknown": 0,
-        "suppressed": 0
+        "suppressed": 0,
+        "testsExecuted": 12,
+        "testKills": 12
       },
       "new": {
-        "total": 9,
-        "killed": 9,
-        "timedOut": 0,
+        "total": 16,
+        "killed": 12,
+        "timedOut": 4,
         "memoryError": 0,
         "survived": 0,
         "noCoverage": 0,
         "unknown": 0,
-        "suppressed": 0
+        "suppressed": 0,
+        "testsExecuted": 12,
+        "testKills": 12
       }
     }
   },

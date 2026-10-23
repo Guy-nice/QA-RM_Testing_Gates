@@ -38,3 +38,27 @@ export function modulo(a: number, b: number): number {
   }
   return a % b;
 }
+
+export function cube(n: number): number {
+  return n * n * n;
+}
+
+export function factorial(n: number): number {
+  if (n < 0) {
+    throw new Error("Factorial of negative number");
+  }
+  if (n === 0 || n === 1) {
+    return 1;
+  }
+  return n * factorial(n - 1);
+}
+
+export function sign(n: number): number {
+  if (n > 0) {
+    return 1;
+  }
+  if (n < 0) {
+    return -1;
+  }
+  return 0;
+}

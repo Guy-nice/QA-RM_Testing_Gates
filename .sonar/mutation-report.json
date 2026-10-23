@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "run": {
-    "runId": "run-1792739681",
+    "runId": "run-1792773059",
     "threshold": 80,
     "round": 1,
     "verdict": "FAIL",
@@ -9,94 +9,142 @@
       "stryker"
     ],
     "agentVersion": "2.0.0-rc2",
-    "commit": "419e00f6eee7ed045d9697a111ea115d42b54c46",
-    "scoreBefore": 75.0,
-    "durationSec": 165
+    "commit": "76bcfb1deaeb6bba44ca36e703ab4a4aeec260be",
+    "scoreBefore": 68.0,
+    "durationSec": 72
   },
   "summary": {
     "overall": {
-      "total": 16,
-      "killed": 12,
-      "timedOut": 4,
+      "total": 25,
+      "killed": 17,
+      "timedOut": 0,
       "memoryError": 0,
-      "survived": 0,
+      "survived": 8,
       "noCoverage": 0,
       "unknown": 0,
       "suppressed": 0,
-      "testsExecuted": 12,
-      "testKills": 12
+      "testsExecuted": 25,
+      "testKills": 17
     },
     "new": {
-      "total": 16,
-      "killed": 12,
-      "timedOut": 4,
+      "total": 25,
+      "killed": 17,
+      "timedOut": 0,
       "memoryError": 0,
-      "survived": 0,
+      "survived": 8,
       "noCoverage": 0,
       "unknown": 0,
       "suppressed": 0,
-      "testsExecuted": 12,
-      "testKills": 12
+      "testsExecuted": 25,
+      "testKills": 17
     }
   },
   "languages": {
     "typescript": {
       "overall": {
-        "total": 16,
-        "killed": 12,
-        "timedOut": 4,
+        "total": 25,
+        "killed": 17,
+        "timedOut": 0,
         "memoryError": 0,
-        "survived": 0,
+        "survived": 8,
         "noCoverage": 0,
         "unknown": 0,
         "suppressed": 0,
-        "testsExecuted": 12,
-        "testKills": 12
+        "testsExecuted": 25,
+        "testKills": 17
       },
       "new": {
-        "total": 16,
-        "killed": 12,
-        "timedOut": 4,
+        "total": 25,
+        "killed": 17,
+        "timedOut": 0,
         "memoryError": 0,
-        "survived": 0,
+        "survived": 8,
         "noCoverage": 0,
         "unknown": 0,
         "suppressed": 0,
-        "testsExecuted": 12,
-        "testKills": 12
+        "testsExecuted": 25,
+        "testKills": 17
       }
     }
   },
   "files": {
-    "src/calculator.ts": {
+    ".claude/skills/run-mutation-workflow/scripts/src/calculator.ts": {
       "language": "typescript",
-      "changedLines": 14,
-      "lines": 30,
+      "changedLines": 0,
       "overall": {
-        "total": 16,
-        "killed": 12,
-        "timedOut": 4,
+        "total": 25,
+        "killed": 17,
+        "timedOut": 0,
         "memoryError": 0,
-        "survived": 0,
+        "survived": 8,
         "noCoverage": 0,
         "unknown": 0,
         "suppressed": 0,
-        "testsExecuted": 12,
-        "testKills": 12
+        "testsExecuted": 25,
+        "testKills": 17
       },
       "new": {
-        "total": 16,
-        "killed": 12,
-        "timedOut": 4,
+        "total": 25,
+        "killed": 17,
+        "timedOut": 0,
         "memoryError": 0,
-        "survived": 0,
+        "survived": 8,
         "noCoverage": 0,
         "unknown": 0,
         "suppressed": 0,
-        "testsExecuted": 12,
-        "testKills": 12
+        "testsExecuted": 25,
+        "testKills": 17
       }
     }
   },
-  "mutants": []
+  "mutants": [
+    {
+      "file": ".claude/skills/run-mutation-workflow/scripts/src/calculator.ts",
+      "line": 50,
+      "operator": "ConditionalExpression",
+      "status": "SURVIVED"
+    },
+    {
+      "file": ".claude/skills/run-mutation-workflow/scripts/src/calculator.ts",
+      "line": 57,
+      "operator": "ConditionalExpression",
+      "status": "SURVIVED"
+    },
+    {
+      "file": ".claude/skills/run-mutation-workflow/scripts/src/calculator.ts",
+      "line": 57,
+      "operator": "EqualityOperator",
+      "status": "SURVIVED"
+    },
+    {
+      "file": ".claude/skills/run-mutation-workflow/scripts/src/calculator.ts",
+      "line": 60,
+      "operator": "ConditionalExpression",
+      "status": "SURVIVED"
+    },
+    {
+      "file": ".claude/skills/run-mutation-workflow/scripts/src/calculator.ts",
+      "line": 60,
+      "operator": "ConditionalExpression",
+      "status": "SURVIVED"
+    },
+    {
+      "file": ".claude/skills/run-mutation-workflow/scripts/src/calculator.ts",
+      "line": 60,
+      "operator": "EqualityOperator",
+      "status": "SURVIVED"
+    },
+    {
+      "file": ".claude/skills/run-mutation-workflow/scripts/src/calculator.ts",
+      "line": 60,
+      "operator": "EqualityOperator",
+      "status": "SURVIVED"
+    },
+    {
+      "file": ".claude/skills/run-mutation-workflow/scripts/src/calculator.ts",
+      "line": 61,
+      "operator": "UnaryOperator",
+      "status": "SURVIVED"
+    }
+  ]
 }

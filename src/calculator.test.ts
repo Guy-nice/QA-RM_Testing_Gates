@@ -67,3 +67,19 @@ test("modulo throws on modulo by zero", () => {
   assert.throws(() => modulo(1, 0), /Modulo by zero/);
   assert.throws(() => modulo(0, 0), /Modulo by zero/);
 });
+
+import { absolute, max } from "./calculator.ts";
+
+test("absolute_negativeNumber_returnsPositive", () => {
+  assert.equal(absolute(-5), 5);
+  assert.equal(absolute(-0.5), 0.5);
+});
+
+test("absolute_zero_returnsPositiveZero", () => {
+  assert.equal(absolute(0), 0);
+});
+
+test("max_firstGreater_returnsFirst", () => {
+  assert.equal(max(7, 3), 7);
+  assert.equal(max(-1, -5), -1);
+});

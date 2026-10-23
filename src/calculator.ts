@@ -27,3 +27,28 @@ export function multiply(a: number, b: number): number {
 export function isEven(n: number): boolean {
   return n % 2 === 0;
 }
+
+export function modulo(a: number, b: number): number {
+  if (b === 0) {
+    throw new Error("Modulo by zero");
+  }
+  return a % b;
+}
+
+export function power(base: number, exponent: number): number {
+  return Math.pow(base, exponent);
+}
+
+export function absolute(n: number): number {
+  if (n < 0) {
+    return -n;
+  }
+  return n;
+}
+
+export function max(a: number, b: number): number {
+  if (a > b) {
+    return a;
+  }
+  return b;
+}

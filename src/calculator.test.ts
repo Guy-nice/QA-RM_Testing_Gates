@@ -79,3 +79,11 @@ test("factorial throws on negative numbers", () => {
 test("sign returns 1 for a positive number", () => {
   assert.equal(sign(5), 1);
 });
+
+test("sign_negativeNumber_returnsMinusOne", () => {
+  assert.equal(sign(-5), -1);
+});
+
+test("sign_zero_returnsZero", () => {
+  assert.equal(sign(0), 0);
+});

@@ -1,100 +1,89 @@
 {
   "schemaVersion": 1,
   "run": {
-    "runId": "run-1792653934",
+    "runId": "ci-1792735500771",
     "threshold": 80,
-    "round": 2,
+    "round": 1,
     "verdict": "PASS",
     "tools": [
       "stryker"
     ],
-    "agentVersion": "2.0.0-rc2",
-    "commit": "d5519d6f532b4982fc7c34826e90373f508f5698",
-    "scoreBefore": 66.7,
-    "durationSec": 835
+    "commit": "d2fb6d85c7ca5c163e9bb4a34fcad66aa373caa5"
   },
   "summary": {
     "overall": {
-      "total": 24,
-      "killed": 24,
+      "total": 35,
+      "killed": 35,
       "timedOut": 0,
       "memoryError": 0,
       "survived": 0,
       "noCoverage": 0,
       "unknown": 0,
-      "suppressed": 0,
-      "testsExecuted": 24,
-      "testKills": 24
+      "suppressed": 0
     },
     "new": {
-      "total": 6,
-      "killed": 6,
+      "total": 9,
+      "killed": 9,
       "timedOut": 0,
       "memoryError": 0,
       "survived": 0,
       "noCoverage": 0,
       "unknown": 0,
-      "suppressed": 0,
-      "testsExecuted": 6,
-      "testKills": 6
+      "suppressed": 0
     }
   },
   "languages": {
     "typescript": {
       "overall": {
-        "total": 24,
-        "killed": 24,
+        "total": 35,
+        "killed": 35,
         "timedOut": 0,
         "memoryError": 0,
         "survived": 0,
         "noCoverage": 0,
         "unknown": 0,
         "suppressed": 0,
-        "testsExecuted": 24,
-        "testKills": 24
+        "testsExecuted": 0,
+        "testKills": 0
       },
       "new": {
-        "total": 6,
-        "killed": 6,
+        "total": 9,
+        "killed": 9,
         "timedOut": 0,
         "memoryError": 0,
         "survived": 0,
         "noCoverage": 0,
         "unknown": 0,
         "suppressed": 0,
-        "testsExecuted": 6,
-        "testKills": 6
+        "testsExecuted": 0,
+        "testKills": 0
       }
     }
   },
   "files": {
     "src/calculator.ts": {
       "language": "typescript",
+      "lines": 41,
       "changedLines": 11,
-      "lines": 22,
       "overall": {
-        "total": 24,
-        "killed": 24,
+        "total": 35,
+        "killed": 35,
         "timedOut": 0,
         "memoryError": 0,
         "survived": 0,
         "noCoverage": 0,
         "unknown": 0,
-        "suppressed": 0,
-        "testsExecuted": 24,
-        "testKills": 24
+        "suppressed": 0
       },
       "new": {
-        "total": 6,
-        "killed": 6,
+        "total": 9,
+        "killed": 9,
         "timedOut": 0,
         "memoryError": 0,
         "survived": 0,
         "noCoverage": 0,
         "unknown": 0,
-        "suppressed": 0,
-        "testsExecuted": 6,
-        "testKills": 6
+        "suppressed": 0
       }
     }
   },

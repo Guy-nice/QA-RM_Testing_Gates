@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { add, subtract, isPositive, divide, multiply, isEven, square, modulo, cube, factorial, sign } from "./calculator.ts";
+import { add, subtract, isPositive, divide, multiply, isEven, square, modulo, cube, factorial, sign, clamp, isLeapYear } from "./calculator.ts";
 
 test("add adds two numbers", () => {
   assert.equal(add(2, 3), 5);
@@ -86,4 +86,42 @@ test("sign_negativeNumber_returnsMinusOne", () => {
 
 test("sign_zero_returnsZero", () => {
   assert.equal(sign(0), 0);
+});
+
+// Weak on purpose: only a value inside the range is checked.
+test("clamp keeps a value inside the range", () => {
+  assert.equal(clamp(5, 0, 10), 5);
+});
+
+// Weak on purpose: only a common year is checked.
+test("isLeapYear returns true for 2024", () => {
+  assert.equal(isLeapYear(2024), true);
+});
+
+test("clamp_belowMin_returnsMin", () => {
+  assert.equal(clamp(-5, 0, 10), 0);
+});
+
+test("clamp_aboveMax_returnsMax", () => {
+  assert.equal(clamp(15, 0, 10), 10);
+});
+
+test("clamp_atBounds_returnsBound", () => {
+  assert.equal(clamp(0, 0, 10), 0);
+  assert.equal(clamp(10, 0, 10), 10);
+});
+
+test("isLeapYear_divisibleBy400_returnsTrue", () => {
+  assert.equal(isLeapYear(2000), true);
+  assert.equal(isLeapYear(1600), true);
+});
+
+test("isLeapYear_divisibleBy100Not400_returnsFalse", () => {
+  assert.equal(isLeapYear(1900), false);
+  assert.equal(isLeapYear(2100), false);
+});
+
+test("isLeapYear_notDivisibleBy4_returnsFalse", () => {
+  assert.equal(isLeapYear(2023), false);
+  assert.equal(isLeapYear(2001), false);
 });

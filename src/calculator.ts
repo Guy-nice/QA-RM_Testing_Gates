@@ -62,3 +62,23 @@ export function sign(n: number): number {
   }
   return 0;
 }
+
+export function clamp(n: number, min: number, max: number): number {
+  if (n < min) {
+    return min;
+  }
+  if (n > max) {
+    return max;
+  }
+  return n;
+}
+
+export function isLeapYear(year: number): boolean {
+  if (year % 400 === 0) {
+    return true;
+  }
+  if (year % 100 === 0) {
+    return false;
+  }
+  return year % 4 === 0;
+}

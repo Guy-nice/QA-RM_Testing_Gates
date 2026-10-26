@@ -1,17 +1,17 @@
 {
   "schemaVersion": 1,
   "run": {
-    "runId": "run-1792774763",
-    "threshold": 90,
-    "round": 2,
+    "runId": "run-1793000909",
+    "threshold": 80,
+    "round": 1,
     "verdict": "PASS",
     "tools": [
       "stryker"
     ],
     "agentVersion": "2.0.0-rc2",
-    "commit": "35c25acdda7f2e6f65c3f58594bc9017f3491699",
-    "scoreBefore": 83.7,
-    "durationSec": 586
+    "commit": "8110c17b5115f8eee878415f6d06721651b49665",
+    "scoreBefore": 98.0,
+    "durationSec": 72
   },
   "summary": {
     "overall": {
@@ -68,9 +68,10 @@
     }
   },
   "files": {
-    ".claude/skills/run-mutation-workflow/scripts/src/calculator.ts": {
+    "src/calculator.ts": {
       "language": "typescript",
-      "changedLines": 0,
+      "changedLines": 36,
+      "lines": 36,
       "overall": {
         "total": 49,
         "killed": 48,
@@ -99,7 +100,7 @@
   },
   "mutants": [
     {
-      "file": ".claude/skills/run-mutation-workflow/scripts/src/calculator.ts",
+      "file": "src/calculator.ts",
       "line": 50,
       "operator": "ConditionalExpression",
       "status": "SURVIVED"

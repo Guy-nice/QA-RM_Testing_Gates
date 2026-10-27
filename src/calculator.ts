@@ -91,3 +91,10 @@ export function roundTo(n: number, digits: number): number {
   const factor = 10 ** digits;
   return Math.round(n * factor) / factor;
 }
+
+export function average(values: number[]): number {
+  if (values.length === 0) {
+    throw new Error("Average of an empty list");
+  }
+  return values.reduce((sum, v) => sum + v, 0) / values.length;
+}

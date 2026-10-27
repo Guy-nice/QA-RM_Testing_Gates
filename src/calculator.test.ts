@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { add, subtract, isPositive, divide, multiply, isEven, square, modulo, cube, factorial, sign, clamp, isLeapYear, between, roundTo } from "./calculator.ts";
+import { add, subtract, isPositive, divide, multiply, isEven, square, modulo, cube, factorial, sign, clamp, isLeapYear, between, roundTo, average } from "./calculator.ts";
 
 test("add adds two numbers", () => {
   assert.equal(add(2, 3), 5);
@@ -136,6 +136,11 @@ test("roundTo rounds to two decimal places", () => {
   assert.equal(roundTo(1.234, 2), 1.23);
 });
 
+// Weak on purpose: only one two-value list is checked, and the empty-list error is not.
+test("average returns the mean of two numbers", () => {
+  assert.equal(average([2, 4]), 3);
+});
+
 test("between_atLowerBound_returnsTrue", () => {
   assert.equal(between(0, 0, 10), true);
 });
@@ -150,4 +155,8 @@ test("between_belowLow_returnsFalse", () => {
 
 test("between_aboveHigh_returnsFalse", () => {
   assert.equal(between(11, 0, 10), false);
+});
+
+test("average_emptyList_throwsWithMessage", () => {
+  assert.throws(() => average([]), /Average of an empty list/);
 });

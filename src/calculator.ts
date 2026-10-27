@@ -82,3 +82,12 @@ export function isLeapYear(year: number): boolean {
   }
   return year % 4 === 0;
 }
+
+export function between(n: number, low: number, high: number): boolean {
+  return n >= low && n <= high;
+}
+
+export function roundTo(n: number, digits: number): number {
+  const factor = 10 ** digits;
+  return Math.round(n * factor) / factor;
+}

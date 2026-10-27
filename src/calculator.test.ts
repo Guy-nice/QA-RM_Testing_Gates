@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { add, subtract, isPositive, divide, multiply, isEven, square, modulo, cube, factorial, sign, clamp, isLeapYear } from "./calculator.ts";
+import { add, subtract, isPositive, divide, multiply, isEven, square, modulo, cube, factorial, sign, clamp, isLeapYear, between, roundTo } from "./calculator.ts";
 
 test("add adds two numbers", () => {
   assert.equal(add(2, 3), 5);
@@ -124,4 +124,30 @@ test("isLeapYear_divisibleBy100Not400_returnsFalse", () => {
 test("isLeapYear_notDivisibleBy4_returnsFalse", () => {
   assert.equal(isLeapYear(2023), false);
   assert.equal(isLeapYear(2001), false);
+});
+
+// Weak on purpose: only a value well inside the range is checked.
+test("between returns true for a value inside the range", () => {
+  assert.equal(between(5, 0, 10), true);
+});
+
+// Weak on purpose: only one value with one decimal place is checked.
+test("roundTo rounds to two decimal places", () => {
+  assert.equal(roundTo(1.234, 2), 1.23);
+});
+
+test("between_atLowerBound_returnsTrue", () => {
+  assert.equal(between(0, 0, 10), true);
+});
+
+test("between_atUpperBound_returnsTrue", () => {
+  assert.equal(between(10, 0, 10), true);
+});
+
+test("between_belowLow_returnsFalse", () => {
+  assert.equal(between(-1, 0, 10), false);
+});
+
+test("between_aboveHigh_returnsFalse", () => {
+  assert.equal(between(11, 0, 10), false);
 });

@@ -4,10 +4,12 @@ on:
   push:
     branches: [ main, master ]
   pull_request:
+    types: [opened, synchronize, reopened]
   workflow_dispatch:
 
 jobs:
-  test:
+  build:
+    name: Build and analyze
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -42,7 +44,7 @@ jobs:
           ~/.sonar/sonar-scanner-6.1.0.4477-linux-x64/bin/sonar-scanner \
             -Dsonar.projectBaseDir=. \
             -Dsonar.mutation.reportPath=.sonar/mutation-report.json \
-            -Dsonar.host.url=https://sonartest.nice.com \
+            -Dsonar.host.url=https://sonar.nice.com \
             -Dsonar.token=${{ secrets.SONAR_TOKEN }}
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}

@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { add, subtract, isPositive, divide, multiply, isEven } from "./calculator.ts";
+import { add, subtract, isPositive, divide, multiply, isEven, square, modulo, cube, factorial, sign, clamp, isLeapYear, between, roundTo, average } from "./calculator.ts";
 
 test("add adds two numbers", () => {
   assert.equal(add(2, 3), 5);
@@ -42,4 +42,121 @@ test("isEven returns true for even numbers", () => {
 test("isEven returns false for odd numbers", () => {
   assert.equal(isEven(3), false);
   assert.equal(isEven(1), false);
+});
+
+test("square returns the square of a number", () => {
+  assert.equal(square(5), 25);
+  assert.equal(square(2), 4);
+});
+
+test("modulo returns the remainder of division", () => {
+  assert.equal(modulo(10, 3), 1);
+  assert.equal(modulo(8, 2), 0);
+});
+
+test("modulo throws on modulo by zero", () => {
+  assert.throws(() => modulo(5, 0), /Modulo by zero/);
+});
+
+test("cube returns the cube of a number", () => {
+  assert.equal(cube(2), 8);
+});
+
+test("factorial computes factorial correctly", () => {
+  assert.equal(factorial(0), 1);
+  assert.equal(factorial(1), 1);
+  assert.equal(factorial(2), 2);
+  assert.equal(factorial(3), 6);
+  assert.equal(factorial(4), 24);
+  assert.equal(factorial(5), 120);
+});
+
+test("factorial throws on negative numbers", () => {
+  assert.throws(() => factorial(-1), /Factorial of negative number/);
+});
+
+// Weak on purpose: only the positive branch is checked.
+test("sign returns 1 for a positive number", () => {
+  assert.equal(sign(5), 1);
+});
+
+test("sign_negativeNumber_returnsMinusOne", () => {
+  assert.equal(sign(-5), -1);
+});
+
+test("sign_zero_returnsZero", () => {
+  assert.equal(sign(0), 0);
+});
+
+// Weak on purpose: only a value inside the range is checked.
+test("clamp keeps a value inside the range", () => {
+  assert.equal(clamp(5, 0, 10), 5);
+});
+
+// Weak on purpose: only a common year is checked.
+test("isLeapYear returns true for 2024", () => {
+  assert.equal(isLeapYear(2024), true);
+});
+
+test("clamp_belowMin_returnsMin", () => {
+  assert.equal(clamp(-5, 0, 10), 0);
+});
+
+test("clamp_aboveMax_returnsMax", () => {
+  assert.equal(clamp(15, 0, 10), 10);
+});
+
+test("clamp_atBounds_returnsBound", () => {
+  assert.equal(clamp(0, 0, 10), 0);
+  assert.equal(clamp(10, 0, 10), 10);
+});
+
+test("isLeapYear_divisibleBy400_returnsTrue", () => {
+  assert.equal(isLeapYear(2000), true);
+  assert.equal(isLeapYear(1600), true);
+});
+
+test("isLeapYear_divisibleBy100Not400_returnsFalse", () => {
+  assert.equal(isLeapYear(1900), false);
+  assert.equal(isLeapYear(2100), false);
+});
+
+test("isLeapYear_notDivisibleBy4_returnsFalse", () => {
+  assert.equal(isLeapYear(2023), false);
+  assert.equal(isLeapYear(2001), false);
+});
+
+// Weak on purpose: only a value well inside the range is checked.
+test("between returns true for a value inside the range", () => {
+  assert.equal(between(5, 0, 10), true);
+});
+
+// Weak on purpose: only one value with one decimal place is checked.
+test("roundTo rounds to two decimal places", () => {
+  assert.equal(roundTo(1.234, 2), 1.23);
+});
+
+// Weak on purpose: only one two-value list is checked, and the empty-list error is not.
+test("average returns the mean of two numbers", () => {
+  assert.equal(average([2, 4]), 3);
+});
+
+test("between_atLowerBound_returnsTrue", () => {
+  assert.equal(between(0, 0, 10), true);
+});
+
+test("between_atUpperBound_returnsTrue", () => {
+  assert.equal(between(10, 0, 10), true);
+});
+
+test("between_belowLow_returnsFalse", () => {
+  assert.equal(between(-1, 0, 10), false);
+});
+
+test("between_aboveHigh_returnsFalse", () => {
+  assert.equal(between(11, 0, 10), false);
+});
+
+test("average_emptyList_throwsWithMessage", () => {
+  assert.throws(() => average([]), /Average of an empty list/);
 });

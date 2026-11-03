@@ -44,7 +44,7 @@ jobs:
           ~/.sonar/sonar-scanner-6.1.0.4477-linux-x64/bin/sonar-scanner \
             -Dsonar.projectBaseDir=. \
             -Dsonar.mutation.reportPath=.sonar/mutation-report.json \
-            -Dsonar.host.url=https://sonar.nice.com \
-            -Dsonar.token=${{ secrets.SONAR_TOKEN }}
+            -Dsonar.host.url=https://sonar.nice.com
+        # The token comes from the SONAR_TOKEN environment variable below, not the command line.
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}

@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { add, subtract, isPositive, divide, multiply, isEven, square, modulo, cube, factorial, sign, clamp, isLeapYear, between, roundTo, average, minOf, isBlank, maxOf, isPrime, discount, grade, absDiff, isOdd, percent, halve } from "./calculator.ts";
+import { add, subtract, isPositive, divide, multiply, isEven, square, modulo, cube, factorial, sign, clamp, isLeapYear, between, roundTo, average, minOf, isBlank, maxOf, isPrime, discount, grade, absDiff, isOdd, percent, halve, reciprocal, clampPercent } from "./calculator.ts";
 
 test("add adds two numbers", () => {
   assert.equal(add(2, 3), 5);
@@ -269,4 +269,30 @@ test("percent returns the share of a whole", () => {
 // Weak on purpose: one value is checked.
 test("halve returns half of 8", () => {
   assert.equal(halve(8), 4);
+});
+
+// Weak on purpose: one value is checked.
+test("reciprocal returns 1 over the value for 4", () => {
+  assert.equal(reciprocal(4), 0.25);
+});
+
+// Weak on purpose: only a value inside 0 to 100 is checked.
+test("clampPercent keeps 50 unchanged", () => {
+  assert.equal(clampPercent(50), 50);
+});
+
+test("reciprocal_zero_throwsWithMessage", () => {
+  assert.throws(() => reciprocal(0), /Reciprocal of zero/);
+});
+
+test("reciprocal_negativeNumber_returnsNegativeReciprocal", () => {
+  assert.equal(reciprocal(-4), -0.25);
+});
+
+test("clampPercent_aboveHundred_returnsHundred", () => {
+  assert.equal(clampPercent(150), 100);
+});
+
+test("clampPercent_negativeInput_returnsZero", () => {
+  assert.equal(clampPercent(-5), 0);
 });

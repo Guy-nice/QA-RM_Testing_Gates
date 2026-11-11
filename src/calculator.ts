@@ -168,3 +168,20 @@ export function halve(n: number): number {
 export function negate(n: number): number {
   return -n;
 }
+
+export function reciprocal(n: number): number {
+  if (n === 0) {
+    throw new Error("Reciprocal of zero");
+  }
+  return 1 / n;
+}
+
+export function clampPercent(n: number): number {
+  if (n < 0) {
+    return 0;
+  }
+  if (n > 100) {
+    return 100;
+  }
+  return n;
+}

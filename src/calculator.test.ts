@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { add, subtract, isPositive, divide, multiply, isEven, square, modulo, cube, factorial, sign, clamp, isLeapYear, between, roundTo, average } from "./calculator.ts";
+import { add, subtract, isPositive, divide, multiply, isEven, square, modulo, cube, factorial, sign, clamp, isLeapYear, between, roundTo, average, minOf, isBlank, maxOf, isPrime } from "./calculator.ts";
 
 test("add adds two numbers", () => {
   assert.equal(add(2, 3), 5);
@@ -159,4 +159,50 @@ test("between_aboveHigh_returnsFalse", () => {
 
 test("average_emptyList_throwsWithMessage", () => {
   assert.throws(() => average([]), /Average of an empty list/);
+});
+
+// Weak on purpose: one value per method is checked.
+test("minOf and isBlank return the expected value for one input each", () => {
+  assert.equal(minOf(2, 5), 2);
+  assert.equal(isBlank("   "), true);
+});
+
+test("minOf_firstGreaterThanSecond_returnsSecond", () => {
+  assert.equal(minOf(5, 2), 2);
+  assert.equal(minOf(0, -3), -3);
+});
+
+test("isBlank_nonBlankText_returnsFalse", () => {
+  assert.equal(isBlank("abc"), false);
+  assert.equal(isBlank("  a "), false);
+});
+
+// Weak on purpose: only one value per method is checked.
+test("maxOf and isPrime return the expected value for one input each", () => {
+  assert.equal(maxOf(2, 5), 5);
+  assert.equal(isPrime(7), true);
+});
+
+test("minOf_negativeZeroAndPositiveZero_returnsPositiveZero", () => {
+  assert.equal(minOf(-0, 0), 0);
+});
+
+test("maxOf_firstGreaterThanSecond_returnsFirstArgument", () => {
+  assert.equal(maxOf(5, 2), 5);
+});
+
+test("maxOf_positiveZeroAndNegativeZero_returnsNegativeZero", () => {
+  assert.equal(maxOf(0, -0), -0);
+});
+
+test("isPrime_one_returnsFalse", () => {
+  assert.equal(isPrime(1), false);
+});
+
+test("isPrime_two_returnsTrue", () => {
+  assert.equal(isPrime(2), true);
+});
+
+test("isPrime_perfectSquareComposite_returnsFalse", () => {
+  assert.equal(isPrime(4), false);
 });

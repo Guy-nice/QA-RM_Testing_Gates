@@ -98,3 +98,27 @@ export function average(values: number[]): number {
   }
   return values.reduce((sum, v) => sum + v, 0) / values.length;
 }
+
+export function minOf(a: number, b: number): number {
+  return a < b ? a : b;
+}
+
+export function isBlank(text: string): boolean {
+  return text.trim().length === 0;
+}
+
+export function maxOf(a: number, b: number): number {
+  return a > b ? a : b;
+}
+
+export function isPrime(n: number): boolean {
+  if (n < 2) {
+    return false;
+  }
+  for (let i = 2; i * i <= n; i++) {
+    if (n % i === 0) {
+      return false;
+    }
+  }
+  return true;
+}

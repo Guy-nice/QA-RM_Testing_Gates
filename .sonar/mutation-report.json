@@ -1,121 +1,103 @@
 {
   "schemaVersion": 1,
   "run": {
-    "runId": "run-1793690015",
+    "runId": "run-1794375983",
     "threshold": 80,
-    "round": 1,
+    "round": 2,
     "verdict": "PASS",
     "tools": [
       "stryker"
     ],
     "agentVersion": "2.0.0-rc9",
-    "commit": "d12fac4dba479a146e23aa9f21d76240ee7f2305",
-    "scoreBefore": 96.6,
-    "durationSec": 77
+    "commit": "c9f0bbc6310a5365b6f5832f56054dcde42221be",
+    "dirty": true,
+    "scoreBefore": 57.1,
+    "durationSec": 589
   },
   "summary": {
     "overall": {
-      "total": 89,
-      "killed": 86,
+      "total": 28,
+      "killed": 28,
       "timedOut": 0,
       "memoryError": 0,
-      "survived": 3,
+      "survived": 0,
       "noCoverage": 0,
       "unknown": 0,
       "suppressed": 0,
-      "testsExecuted": 89,
-      "testKills": 86
+      "testsExecuted": 28,
+      "testKills": 28
     },
     "new": {
-      "total": 89,
-      "killed": 86,
+      "total": 28,
+      "killed": 28,
       "timedOut": 0,
       "memoryError": 0,
-      "survived": 3,
+      "survived": 0,
       "noCoverage": 0,
       "unknown": 0,
       "suppressed": 0,
-      "testsExecuted": 89,
-      "testKills": 86
+      "testsExecuted": 28,
+      "testKills": 28
     }
   },
   "languages": {
     "typescript": {
       "overall": {
-        "total": 89,
-        "killed": 86,
+        "total": 28,
+        "killed": 28,
         "timedOut": 0,
         "memoryError": 0,
-        "survived": 3,
+        "survived": 0,
         "noCoverage": 0,
         "unknown": 0,
         "suppressed": 0,
-        "testsExecuted": 89,
-        "testKills": 86
+        "testsExecuted": 28,
+        "testKills": 28
       },
       "new": {
-        "total": 89,
-        "killed": 86,
+        "total": 28,
+        "killed": 28,
         "timedOut": 0,
         "memoryError": 0,
-        "survived": 3,
+        "survived": 0,
         "noCoverage": 0,
         "unknown": 0,
         "suppressed": 0,
-        "testsExecuted": 89,
-        "testKills": 86
+        "testsExecuted": 28,
+        "testKills": 28
       }
     }
   },
   "files": {
     "src/calculator.ts": {
       "language": "typescript",
-      "changedLines": 57,
-      "lines": 57,
+      "changedLines": 24,
+      "lines": 70,
       "overall": {
-        "total": 89,
-        "killed": 86,
+        "total": 28,
+        "killed": 28,
         "timedOut": 0,
         "memoryError": 0,
-        "survived": 3,
+        "survived": 0,
         "noCoverage": 0,
         "unknown": 0,
         "suppressed": 0,
-        "testsExecuted": 89,
-        "testKills": 86
+        "testsExecuted": 28,
+        "testKills": 28
       },
       "new": {
-        "total": 89,
-        "killed": 86,
+        "total": 28,
+        "killed": 28,
         "timedOut": 0,
         "memoryError": 0,
-        "survived": 3,
+        "survived": 0,
         "noCoverage": 0,
         "unknown": 0,
         "suppressed": 0,
-        "testsExecuted": 89,
-        "testKills": 86
+        "testsExecuted": 28,
+        "testKills": 28
       }
     }
   },
-  "mutants": [
-    {
-      "file": "src/calculator.ts",
-      "line": 50,
-      "operator": "ConditionalExpression",
-      "status": "SURVIVED"
-    },
-    {
-      "file": "src/calculator.ts",
-      "line": 67,
-      "operator": "EqualityOperator",
-      "status": "SURVIVED"
-    },
-    {
-      "file": "src/calculator.ts",
-      "line": 70,
-      "operator": "EqualityOperator",
-      "status": "SURVIVED"
-    }
-  ]
+  "mutants": []
 }

@@ -122,3 +122,49 @@ export function isPrime(n: number): boolean {
   }
   return true;
 }
+
+export function discount(price: number, percent: number): number {
+  if (percent < 0 || percent > 100) {
+    throw new Error("Percent out of range");
+  }
+  if (percent === 0) {
+    return price;
+  }
+  return price - (price * percent) / 100;
+}
+
+export function grade(score: number): string {
+  if (score >= 90) {
+    return "A";
+  }
+  if (score >= 80) {
+    return "B";
+  }
+  if (score >= 70) {
+    return "C";
+  }
+  return "F";
+}
+
+export function absDiff(a: number, b: number): number {
+  return Math.abs(a - b);
+}
+
+export function isOdd(n: number): boolean {
+  return n % 2 === 1;
+}
+
+export function percent(part: number, whole: number): number {
+  if (whole === 0) {
+    return 0;
+  }
+  return (part / whole) * 100;
+}
+
+export function halve(n: number): number {
+  return n / 2;
+}
+
+export function negate(n: number): number {
+  return -n;
+}

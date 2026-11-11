@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { add, subtract, isPositive, divide, multiply, isEven, square, modulo, cube, factorial, sign, clamp, isLeapYear, between, roundTo, average, minOf, isBlank, maxOf, isPrime } from "./calculator.ts";
+import { add, subtract, isPositive, divide, multiply, isEven, square, modulo, cube, factorial, sign, clamp, isLeapYear, between, roundTo, average, minOf, isBlank, maxOf, isPrime, discount, grade, absDiff, isOdd, percent, halve } from "./calculator.ts";
 
 test("add adds two numbers", () => {
   assert.equal(add(2, 3), 5);
@@ -205,4 +205,68 @@ test("isPrime_two_returnsTrue", () => {
 
 test("isPrime_perfectSquareComposite_returnsFalse", () => {
   assert.equal(isPrime(4), false);
+});
+
+test("discount reduces the price", () => {
+  assert.equal(discount(100, 10), 90);
+});
+
+test("grade returns A for a high score", () => {
+  assert.equal(grade(95), "A");
+});
+
+test("discount_negativePercent_throwsWithMessage", () => {
+  assert.throws(() => discount(100, -1), /Percent out of range/);
+});
+
+test("discount_percentAboveHundred_throwsWithMessage", () => {
+  assert.throws(() => discount(100, 101), /Percent out of range/);
+});
+
+test("discount_percentAtBounds_doesNotThrow", () => {
+  assert.equal(discount(50, 100), 0);
+  assert.equal(discount(50, 0), 50);
+});
+
+test("discount_zeroPercentInfinitePrice_returnsPriceUnchanged", () => {
+  assert.equal(discount(Infinity, 0), Infinity);
+});
+
+test("grade_atNinety_returnsA", () => {
+  assert.equal(grade(90), "A");
+});
+
+test("grade_belowNinety_returnsB", () => {
+  assert.equal(grade(89), "B");
+  assert.equal(grade(80), "B");
+});
+
+test("grade_belowEighty_returnsC", () => {
+  assert.equal(grade(79), "C");
+  assert.equal(grade(70), "C");
+});
+
+test("grade_belowSeventy_returnsF", () => {
+  assert.equal(grade(69), "F");
+  assert.equal(grade(0), "F");
+});
+
+// Weak on purpose: one value per method is checked.
+test("absDiff returns the difference for one pair", () => {
+  assert.equal(absDiff(5, 3), 2);
+});
+
+// Weak on purpose: one odd number is checked.
+test("isOdd returns true for 3", () => {
+  assert.equal(isOdd(3), true);
+});
+
+// Weak on purpose: one part and whole are checked, not the zero whole.
+test("percent returns the share of a whole", () => {
+  assert.equal(percent(1, 2), 50);
+});
+
+// Weak on purpose: one value is checked.
+test("halve returns half of 8", () => {
+  assert.equal(halve(8), 4);
 });

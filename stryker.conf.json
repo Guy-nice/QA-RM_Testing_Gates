@@ -3,7 +3,7 @@
   "packageManager": "npm",
   "testRunner": "command",
   "commandRunner": {
-    "command": "npm test"
+    "command": "node --import tsx --test"
   },
   "mutate": [
     "src/calculator.ts"

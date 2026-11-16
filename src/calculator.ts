@@ -27,3 +27,161 @@ export function multiply(a: number, b: number): number {
 export function isEven(n: number): boolean {
   return n % 2 === 0;
 }
+
+export function square(n: number): number {
+  return n * n;
+}
+
+export function modulo(a: number, b: number): number {
+  if (b === 0) {
+    throw new Error("Modulo by zero");
+  }
+  return a % b;
+}
+
+export function cube(n: number): number {
+  return n * n * n;
+}
+
+export function factorial(n: number): number {
+  if (n < 0) {
+    throw new Error("Factorial of negative number");
+  }
+  if (n === 0 || n === 1) {
+    return 1;
+  }
+  return n * factorial(n - 1);
+}
+
+export function sign(n: number): number {
+  if (n > 0) {
+    return 1;
+  }
+  if (n < 0) {
+    return -1;
+  }
+  return 0;
+}
+
+export function clamp(n: number, min: number, max: number): number {
+  if (n < min) {
+    return min;
+  }
+  if (n > max) {
+    return max;
+  }
+  return n;
+}
+
+export function isLeapYear(year: number): boolean {
+  if (year % 400 === 0) {
+    return true;
+  }
+  if (year % 100 === 0) {
+    return false;
+  }
+  return year % 4 === 0;
+}
+
+export function between(n: number, low: number, high: number): boolean {
+  return n >= low && n <= high;
+}
+
+export function roundTo(n: number, digits: number): number {
+  const factor = 10 ** digits;
+  return Math.round(n * factor) / factor;
+}
+
+export function average(values: number[]): number {
+  if (values.length === 0) {
+    throw new Error("Average of an empty list");
+  }
+  return values.reduce((sum, v) => sum + v, 0) / values.length;
+}
+
+export function minOf(a: number, b: number): number {
+  return a < b ? a : b;
+}
+
+export function isBlank(text: string): boolean {
+  return text.trim().length === 0;
+}
+
+export function maxOf(a: number, b: number): number {
+  return a > b ? a : b;
+}
+
+export function isPrime(n: number): boolean {
+  if (n < 2) {
+    return false;
+  }
+  for (let i = 2; i * i <= n; i++) {
+    if (n % i === 0) {
+      return false;
+    }
+  }
+  return true;
+}
+
+export function discount(price: number, percent: number): number {
+  if (percent < 0 || percent > 100) {
+    throw new Error("Percent out of range");
+  }
+  if (percent === 0) {
+    return price;
+  }
+  return price - (price * percent) / 100;
+}
+
+export function grade(score: number): string {
+  if (score >= 90) {
+    return "A";
+  }
+  if (score >= 80) {
+    return "B";
+  }
+  if (score >= 70) {
+    return "C";
+  }
+  return "F";
+}
+
+export function absDiff(a: number, b: number): number {
+  return Math.abs(a - b);
+}
+
+export function isOdd(n: number): boolean {
+  return n % 2 === 1;
+}
+
+export function percent(part: number, whole: number): number {
+  if (whole === 0) {
+    return 0;
+  }
+  return (part / whole) * 100;
+}
+
+export function halve(n: number): number {
+  return n / 2;
+}
+
+export function negate(n: number): number {
+  return -n;
+}
+
+export function reciprocal(n: number): number {
+  if (n === 0) {
+    throw new Error("Reciprocal of zero");
+  }
+  return 1 / n;
+}
+
+export function clampPercent(n: number): number {
+  if (n < 0) {
+    return 0;
+  }
+  if (n > 100) {
+    return 100;
+  }
+  return n;
+}
